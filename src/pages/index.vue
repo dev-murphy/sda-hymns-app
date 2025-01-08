@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-full max-w-[1240px] mx-auto">
+  <div class="w-full max-w-[1240px] my-auto mx-auto">
     <header class="flex flex-col items-center">
       <div class="flex items-center gap-x-2">
         <img src="../../assets/images/logo.webp" alt="logo" class="w-12" />
@@ -9,7 +9,7 @@
           <span class="block text-lg font-arima leading-3"
             >Seventh-day Adventist</span
           >
-          <span class="text-3xl font-bold font-open-sans leading-7"
+          <span class="text-3xl font-black font-open-sans leading-7"
             >Hymnal App</span
           >
         </h1>
@@ -23,5 +23,6 @@
         >
       </p>
     </header>
+    <ListView />
   </div>
 </template>
