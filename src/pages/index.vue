@@ -1,3 +1,3 @@
 <template>
-  <RouterView />
+  <p>SDA Hymns App</p>
 </template>
