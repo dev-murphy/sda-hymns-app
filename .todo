@@ -9,7 +9,7 @@
 ✔ Add fonts and tailwind config @done(25-01-08 01:15)
     - colors
     - light/dark mode
-☐ Add favicon and other public assets
+✔ Add favicon and other public assets @done(25-01-08 01:26)
 ☐ Create home page
     - needs filter, sort and categories
     - needs list and grid view 
