@@ -1,0 +1,24 @@
+☐ Remove boilerplate code
+☐ Update README with project details
+☐ Add necessary packages
+    - tailwindcss
+    - vue-router & unplugin-vue-router
+    - unplugin-auto-import
+    - unplugin-vue-components
+    - webfontdl
+☐ Add fonts and tailwind config
+    - colors
+    - light/dark mode
+☐ Add favicon and other public assets
+☐ Create home page
+    - needs filter, sort and categories
+    - needs list and grid view 
+    - needs pagination
+    - needs search functionality
+☐ Create the indvidual hymn page
+    - needs basic info on hymn
+    - needs lyrics with correct sections
+    - needs audio player
+☐ Create presentation page
+    - needs to show current section for selected hymn
+    - needs to be slide through other sections using the arrow keys or mouse
