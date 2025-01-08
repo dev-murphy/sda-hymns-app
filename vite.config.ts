@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import AutoImport from "unplugin-auto-import/vite";
+import Component from "unplugin-vue-components/vite";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 
@@ -10,6 +11,11 @@ export default defineConfig({
     AutoImport({
       imports: ["vue"],
       dts: "src/auto-imports.d.ts",
+    }),
+    Component({
+      extensions: ["vue"],
+      include: [/\.vue$/, /\.vue\?vue/],
+      dts: "src/components.d.ts",
     }),
     Vue(),
   ],
