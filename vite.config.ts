@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     VueRouter({ extensions: [".vue"], dts: "src/typed-router.d.ts" }),
     AutoImport({
-      imports: ["vue", VueRouterAutoImports],
+      imports: ["vue", "@vueuse/core", VueRouterAutoImports],
       dts: "src/auto-imports.d.ts",
       dirs: ["src/stores"],
     }),
