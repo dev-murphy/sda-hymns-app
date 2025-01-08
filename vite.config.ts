@@ -3,6 +3,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Component from "unplugin-vue-components/vite";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
+import WebfontDownload from "vite-plugin-webfont-dl";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,5 +19,6 @@ export default defineConfig({
       dts: "src/components.d.ts",
     }),
     Vue(),
+    WebfontDownload(),
   ],
 });
