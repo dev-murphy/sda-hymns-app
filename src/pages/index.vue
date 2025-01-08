@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const appStore = useAppStore();
+</script>
+
 <template>
-  <p>SDA Hymns App</p>
+  <p>{{ appStore.name }}</p>
 </template>

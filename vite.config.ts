@@ -13,6 +13,7 @@ export default defineConfig({
     AutoImport({
       imports: ["vue", VueRouterAutoImports],
       dts: "src/auto-imports.d.ts",
+      dirs: ["src/stores"],
     }),
     Component({
       extensions: ["vue"],
