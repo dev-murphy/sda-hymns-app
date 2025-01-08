@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="min-w-screen min-h-screen bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-white"
+    class="min-w-screen min-h-screen flex bg-neutral-50 dark:bg-neutral-900 px-6 text-neutral-800 dark:text-white"
   >
     <RouterView />
   </div>
