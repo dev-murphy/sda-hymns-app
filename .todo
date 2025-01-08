@@ -6,7 +6,7 @@
     - unplugin-auto-import
     - unplugin-vue-components
     - webfontdl
-☐ Add fonts and tailwind config
+✔ Add fonts and tailwind config @done(25-01-08 01:15)
     - colors
     - light/dark mode
 ☐ Add favicon and other public assets
