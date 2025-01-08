@@ -1,6 +1,6 @@
 ✔ Remove boilerplate code @started(25-01-07 22:35) @done(25-01-07 22:39) @lasted(4m7s)
 ✔ Update README with project details @done(25-01-07 22:46)
-☐ Add necessary packages
+✔ Add necessary packages @started(25-01-07 23:01) @done(25-01-08 00:11) @lasted(1h10m44s)
     - tailwindcss
     - vue-router & unplugin-vue-router
     - unplugin-auto-import
