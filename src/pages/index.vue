@@ -77,6 +77,13 @@ watch(
     deep: true,
   }
 );
+
+watch(
+  () => route.query.offset,
+  (value) => {
+    if (Number(value) === 0) currentPage.value = 1;
+  }
+);
 </script>
 
 <template>
@@ -102,6 +109,8 @@ watch(
         >
       </p>
     </header>
+
+    <Breadcrumbs />
 
     <ListView v-if="data" :hymns="data.hymns" />
 
