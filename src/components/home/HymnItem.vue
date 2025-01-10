@@ -25,7 +25,7 @@ defineProps<{ hymn: HymnData }>();
 
     <p
       v-if="hymn.key"
-      class="bg-black ml-auto px-2 text-white text-sm font-medium rounded-full"
+      class="flex-shrink-0 bg-black ml-auto px-2 text-white text-sm font-medium rounded-full"
     >
       {{ hymn.key }}
     </p>
