@@ -1,5 +1,53 @@
 # Changelog
 
+## [1.1.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.0.0...v1.1.0) (2025-01-10)
+
+
+### Features
+
+* add basic route-based pagination ([26cfae9](https://github.com/dev-murphy/sda-hymns-app/commit/26cfae912ab3bc9f2307b4f4ae6ee1cb1ff65abf))
+* add breadcrumbs component ([45dcba2](https://github.com/dev-murphy/sda-hymns-app/commit/45dcba2fcf8092d87c46b3d4d408f7031e5f7cdc))
+* add custom dropdown component ([d62529f](https://github.com/dev-murphy/sda-hymns-app/commit/d62529f4ed7df2ca491c2357155938024a92dbd8))
+* add pagination component ([81a9eb0](https://github.com/dev-murphy/sda-hymns-app/commit/81a9eb0184e1d32e97cef66d5e9d5c3f47073ff5))
+
+
+### Miscellaneous
+
+* add breadcrumbs to home page ([f25b639](https://github.com/dev-murphy/sda-hymns-app/commit/f25b6398ff10d53e801347028cc6a7a718eeaa5e))
+* add chevron icon component ([c6fcb48](https://github.com/dev-murphy/sda-hymns-app/commit/c6fcb489c40ae2528aee5d3ba1d2832a3d84ad0a))
+* add example env ([85306ad](https://github.com/dev-murphy/sda-hymns-app/commit/85306ad33b358c2d540dbed6c3eca309055e044b))
+* add grid and list icon ([1ca9151](https://github.com/dev-murphy/sda-hymns-app/commit/1ca915140950d8b5b234804812cf107ee4fdb0d8))
+* add home page header ([8353205](https://github.com/dev-murphy/sda-hymns-app/commit/83532059b9e6332b5cd294b3d4c6955c00f8023a))
+* add hymn data type def ([c830420](https://github.com/dev-murphy/sda-hymns-app/commit/c83042057714b5144ac6659e820beb3f908bf658))
+* add hymn item component ([e77bdd1](https://github.com/dev-murphy/sda-hymns-app/commit/e77bdd122800654e840cc0c5dacad702332e04f4))
+* add hymn list component ([5b5660c](https://github.com/dev-murphy/sda-hymns-app/commit/5b5660ce571d83d2881ef9960cc491d9744dfb7c))
+* add hymn list component to home page ([2bd38a9](https://github.com/dev-murphy/sda-hymns-app/commit/2bd38a9f11b9522a56f4b13d7278c578b1c917b7))
+* add logo to assets folder ([2bb881c](https://github.com/dev-murphy/sda-hymns-app/commit/2bb881cf4d345f827f4c9fc2723216d5c6082806))
+* add sort, filter, sun and moon icons ([73238b4](https://github.com/dev-murphy/sda-hymns-app/commit/73238b493c17021f2a9515e82494f441945e70d5))
+* add vueuse/core ([5e131e2](https://github.com/dev-murphy/sda-hymns-app/commit/5e131e207c893822e7f6408fa887c688dc6e67a9))
+* add vueuse/core to auto import ([a3b8700](https://github.com/dev-murphy/sda-hymns-app/commit/a3b8700fdfed72fc8c22578a6395a177117e958d))
+* finalize basic UI for home page ([c7dcc76](https://github.com/dev-murphy/sda-hymns-app/commit/c7dcc769f9c3f82513947cd0058a654e95d07b4b))
+* ignore .env file ([91b6f8c](https://github.com/dev-murphy/sda-hymns-app/commit/91b6f8c1bd0c9d2c54a7a0cfb7a9712997056cdf))
+* update auto-imported typedef ([523d140](https://github.com/dev-murphy/sda-hymns-app/commit/523d140534174de37ea13c2fb86789e35abbc114))
+
+
+### Documentation
+
+* complete sixth task and refactor to dos ([3c0623a](https://github.com/dev-murphy/sda-hymns-app/commit/3c0623a096bdcd077cfcb225e649cac9f87f1ec6))
+
+
+### Code Refactors
+
+* add default option to dropdown component ([e68b909](https://github.com/dev-murphy/sda-hymns-app/commit/e68b909ba076eb84a4bb38969e19a1cddcc56d1b))
+* move data fetching to parent component ([9ad9245](https://github.com/dev-murphy/sda-hymns-app/commit/9ad92451729919be187fc9dfb7ad3386c3157eab))
+
+
+### UI Updates
+
+* made hymn item component mobile responsive ([3e41e78](https://github.com/dev-murphy/sda-hymns-app/commit/3e41e78707728a499fe1f0fb5cd448dd6044e3b1))
+* resolve text wrapping issue on smaller screens ([8bf6858](https://github.com/dev-murphy/sda-hymns-app/commit/8bf68582bcfd389a3cc78c579eebc8780a6eb61f))
+* update UI for pagination component ([bb752b1](https://github.com/dev-murphy/sda-hymns-app/commit/bb752b1704b3c912ea06c2fc80f422b8b36756a8))
+
 ## 1.0.0 (2025-01-08)
 
 
