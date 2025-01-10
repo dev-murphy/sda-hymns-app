@@ -10,11 +10,13 @@
     - colors
     - light/dark mode
 ✔ Add favicon and other public assets @done(25-01-08 01:26)
-☐ Create home page
+✔ Create home page @started(25-01-08 01:32) @done(25-01-10 09:57) @lasted(2d8h25m13s)
     - needs filter, sort and categories
-    - needs list and grid view 
     - needs pagination
-    - needs search functionality
+☐ Home Page: Add list and grid view 
+☐ Home Page: Add search functionality
+☐ Home Page: Add theme toggle
+☐ Home Page: Complete UI
 ☐ Create the indvidual hymn page
     - needs basic info on hymn
     - needs lyrics with correct sections
