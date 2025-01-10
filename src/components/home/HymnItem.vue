@@ -8,11 +8,11 @@ defineProps<{ hymn: HymnData }>();
   <div
     class="flex flex-col md:flex-row items-start gap-x-3 px-3 py-2 hover:bg-neutral-200 cursor-pointer"
   >
-    <h2 class="w-full pt-1 text-lg md:text-3xl font-arima font-black truncate">
+    <h2
+      class="w-full md:w-fit pt-1 text-lg md:text-3xl font-arima font-black truncate"
+    >
       {{ hymn.hymn_number
-      }}<span class="inline md:hidden font-normal"
-        >. {{ hymn.title }}</span
-      >
+      }}<span class="inline md:hidden font-normal">. {{ hymn.title }}</span>
     </h2>
     <div>
       <p class="font-arima font-medium">
