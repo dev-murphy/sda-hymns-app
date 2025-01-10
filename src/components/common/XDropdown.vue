@@ -3,13 +3,13 @@
     <button
       class="flex items-center gap-x-3 bg-gray-100 border border-gray-300 p-2 cursor-pointer rounded-lg"
     >
-      {{ selected }}
+      {{ selectedLabel }}
       <Chevron class="w-5 h-5 transition" :class="{ 'rotate-180': isOpen }" />
     </button>
     <div
       v-if="isOpen"
       ref="dropdownMenu"
-      class="absolute bg-white border border-gray-300 shadow-lg z-10"
+      class="absolute w-max bg-white border border-gray-300 shadow-lg z-10"
       :class="{
         'bottom-full': position === 'top',
         'top-full': position === 'botttom',
@@ -21,7 +21,7 @@
         class="py-2 px-4 cursor-pointer hover:bg-gray-100"
         @click.stop="selectOption(option)"
       >
-        {{ option }}
+        {{ option === "" ? "Select an option" : String(option) }}
       </div>
     </div>
   </div>
@@ -44,14 +44,15 @@ const emit = defineEmits<{
 }>();
 
 const isOpen = ref(false);
-const selected = ref(props.value);
+const selectedLabel = computed(() =>
+  props.value === "" ? "Select an option" : String(props.value)
+);
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value;
 };
 
 const selectOption = (option: typeof props.value) => {
-  selected.value = option;
   isOpen.value = false;
   emit("input", option);
 };
