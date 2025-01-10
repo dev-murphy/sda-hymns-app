@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.0...v1.1.1) (2025-01-10)
+
+
+### UI Updates
+
+* resolve hymn item layout ([01cd5aa](https://github.com/dev-murphy/sda-hymns-app/commit/01cd5aa51b94a1af8f0ffcf28d4cef0199b41c3d))
+
 ## [1.1.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.0.0...v1.1.0) (2025-01-10)
 
 
