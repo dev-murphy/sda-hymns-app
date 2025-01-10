@@ -19,11 +19,11 @@ defineProps<{ hymn: HymnData }>();
         <span class="hidden md:inline">
           {{ hymn.title }}
         </span>
-        <span v-if="hymn.author" class="block md:inline md:pl-1 text-orange-500"
+        <span v-if="hymn.author" class="block md:inline md:pl-1 text-orange-800"
           >by {{ hymn.author }}</span
         >
       </p>
-      <p v-if="hymn.first_line" class="text-sm text-neutral-400 leading-3">
+      <p v-if="hymn.first_line" class="text-sm text-neutral-500 leading-3">
         {{ hymn.first_line }}
       </p>
     </div>
