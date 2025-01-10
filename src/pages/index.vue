@@ -87,7 +87,7 @@ watch(
 </script>
 
 <template>
-  <div class="w-full max-w-[1240px] my-auto mx-auto">
+  <div class="w-full max-w-[1240px] py-10 my-auto mx-auto">
     <header class="flex flex-col items-center">
       <div class="flex items-center gap-x-2">
         <img src="../../assets/images/logo.webp" alt="logo" class="w-12" />
@@ -110,16 +110,18 @@ watch(
       </p>
     </header>
 
-    <Breadcrumbs />
+    <div class="flex flex-col md:flex-row items-center gap-y-2 mt-5">
+      <Breadcrumbs />
+      <Pagination
+        class="md:ml-auto"
+        :current-page="currentPage"
+        :total-pages="Math.floor(data?.count / Number(route.query.limit)) + 1"
+        :current-limit="Number(route.query.limit || 10)"
+        @page-changed="pageChanged"
+        @limit-changed="limitChanged"
+      />
+    </div>
 
     <ListView v-if="data" :hymns="data.hymns" />
-
-    <Pagination
-      :current-page="currentPage"
-      :total-pages="Math.floor(data?.count / Number(route.query.limit)) + 1"
-      :current-limit="Number(route.query.limit || 10)"
-      @page-changed="pageChanged"
-      @limit-changed="limitChanged"
-    />
   </div>
 </template>
