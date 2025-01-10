@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.1...v1.1.2) (2025-01-10)
+
+
+### UI Updates
+
+* add spacing between title and author ([5b49990](https://github.com/dev-murphy/sda-hymns-app/commit/5b49990b352d61dae5c59000f3a059b57651fc5f))
+
 ## [1.1.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.0...v1.1.1) (2025-01-10)
 
 
