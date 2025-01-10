@@ -3,9 +3,16 @@
     <button
       :disabled="currentPage === 1"
       @click="changePage(currentPage - 1)"
-      class="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
+      class="p-1 pl-0.5 bg-blue-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      Previous
+      <Chevron class="w-7 h-7 rotate-90" />
+    </button>
+    <button
+      :disabled="currentPage === totalPages"
+      @click="changePage(currentPage + 1)"
+      class="p-1 pr-0.5 bg-blue-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <Chevron class="w-7 h-7 -rotate-90" />
     </button>
     <span>Page {{ currentPage }} of {{ totalPages }}</span>
     <input
@@ -16,17 +23,10 @@
       :max="totalPages"
       class="w-12 text-center border border-gray-300 rounded"
     />
-    <button
-      :disabled="currentPage === totalPages"
-      @click="changePage(currentPage + 1)"
-      class="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      Next
-    </button>
+
     <x-dropdown
       :options="pageLimits"
       :value="currentLimit"
-      position="top"
       @input="(value: string | number) => changeLimit(Number(value))"
     />
   </div>
