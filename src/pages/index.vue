@@ -87,7 +87,7 @@ watch(
 </script>
 
 <template>
-  <div class="w-full max-w-[1240px] py-10 mx-auto">
+  <div class="w-full max-w-[1240px] py-10 px-6 mx-auto">
     <header class="flex flex-col items-center">
       <div class="flex items-center gap-x-2">
         <img src="../assets/images/logo.webp" alt="logo" class="w-12 h-14" />
