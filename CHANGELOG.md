@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.2.0...v1.3.0) (2025-01-12)
+
+
+### Features
+
+* create hymn page ([2fda354](https://github.com/dev-murphy/sda-hymns-app/commit/2fda35420acf10bc2c9778a2845c83579d1cde07))
+* create navbar component for hymn page ([9da47ab](https://github.com/dev-murphy/sda-hymns-app/commit/9da47ab0a9fb168315cc1a396a13896be83d37a3))
+
+
+### Miscellaneous
+
+* add hymn route to hymn item component ([77bd3f6](https://github.com/dev-murphy/sda-hymns-app/commit/77bd3f61e3483ac9f155e79eb24ef38261106c25))
+* add hymn route to search result in the search command component ([677528e](https://github.com/dev-murphy/sda-hymns-app/commit/677528e7d0b089580fddf8a20d7a05b14a161e4a))
+* set input to auto-focus when mounted ([b20e3b7](https://github.com/dev-murphy/sda-hymns-app/commit/b20e3b79045947d82b0499a27abf51541feb6412))
+* update auto-imported typedefs ([2ed571b](https://github.com/dev-murphy/sda-hymns-app/commit/2ed571bf9c2bbec362847aa4f668dec034426fb0))
+
+
+### Documentation
+
+* complete eight task ([798889d](https://github.com/dev-murphy/sda-hymns-app/commit/798889d20f2601ca5c81265619f7f75e6010ad42))
+
+
+### Code Refactors
+
+* add home page route to back button ([1a8d008](https://github.com/dev-murphy/sda-hymns-app/commit/1a8d008bcf19970081dc1df7690ffc25d6c8352a))
+* move side paddings to app component to individual page ([3407c17](https://github.com/dev-murphy/sda-hymns-app/commit/3407c1717f775504ee582b4a7f3103101b3726f4))
+* remove unused label props ([dbad4c3](https://github.com/dev-murphy/sda-hymns-app/commit/dbad4c3615741858590008f30082939763e90deb))
+
 ## [1.2.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.2...v1.2.0) (2025-01-12)
 
 
