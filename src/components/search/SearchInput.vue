@@ -25,7 +25,6 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    label: string;
     modelValue: string;
     id?: string;
     type?: string;
