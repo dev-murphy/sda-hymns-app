@@ -14,13 +14,13 @@
     - needs filter, sort and categories
     - needs pagination
 ✔ Home Page: Add search functionality @done(25-01-11 22:14)
+✔ Create the indvidual hymn page @done(25-01-12 14:07)
+    - needs basic info on hymn
+    - needs lyrics with correct sections
 ☐ Home Page: Add list and grid view 
 ☐ Home Page: Add theme toggle
 ☐ Home Page: Complete UI
-☐ Create the indvidual hymn page
-    - needs basic info on hymn
-    - needs lyrics with correct sections
-    - needs audio player
+☐ Hymn Page: Add audio player
 ☐ Create presentation page
     - needs to show current section for selected hymn
     - needs to be slide through other sections using the arrow keys or mouse
