@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import Fuse from "fuse.js";
 
-defineEmits<{ (e: "close"): void }>();
+const emit = defineEmits<{ (e: "close"): void }>();
 
 const API_URL = import.meta.env.VITE_API_URL;
+const router = useRouter();
 const { data, isFetching } = useFetch<string>(`${API_URL}hymns/all`);
 
 const selectedHymn = ref(-1);
@@ -28,8 +29,13 @@ function handleKeyDown(event: KeyboardEvent) {
     );
     scrollToSelected();
   } else if (event.key === "Enter" && searchResults.value.length) {
-    // TODO: Navigate to hymn page
+    goToHymn(searchResults.value[selectedHymn.value]["hymn_number"]);
   }
+}
+
+function goToHymn(hymnNumber: string) {
+  router.push(`/hymns/${hymnNumber}`);
+  emit("close");
 }
 
 watch(
@@ -96,6 +102,7 @@ function scrollToSelected() {
               `search-result_${index + 1}`,
             ]"
             @mouseenter="selectedHymn = index"
+            @click="goToHymn(result.hymn_number)"
           >
             {{ result.title }} ({{ result.hymn_number }})
           </li>
