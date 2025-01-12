@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.2.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.2...v1.2.0) (2025-01-12)
+
+
+### Features
+
+* add search command component ([83591b3](https://github.com/dev-murphy/sda-hymns-app/commit/83591b35c46895c0bb1fa3472a717b6a454fb395))
+* add search input component ([51ee10a](https://github.com/dev-murphy/sda-hymns-app/commit/51ee10a03ed501bf8f7046e3a83efaf5d07eddf5))
+* add search, close, enter key and narrow arrow icon component ([0e2179d](https://github.com/dev-murphy/sda-hymns-app/commit/0e2179d75302cad7a278db577cdd7698affcfde0))
+* create search button component ([3dc35a4](https://github.com/dev-murphy/sda-hymns-app/commit/3dc35a40fdfb8ec4f05193da70d239bd1320114e))
+
+
+### Miscellaneous
+
+* add fuse.js deps ([24d5ed6](https://github.com/dev-murphy/sda-hymns-app/commit/24d5ed61d9d4025bcf3f449b89633aac44f97fb9))
+* add robots.txt file ([3b383d3](https://github.com/dev-murphy/sda-hymns-app/commit/3b383d33ff7978c27f30aca16a99185e16b63f0f))
+* add search button component to home page ([6b2fa15](https://github.com/dev-murphy/sda-hymns-app/commit/6b2fa154c54ffc6aab326c6027f3df40da266670))
+* complete seventh task ([a879723](https://github.com/dev-murphy/sda-hymns-app/commit/a87972333f7cf83c049b3ee99c2336b62830129b))
+* correct asset url, update layout to content is at the top ([c1e486b](https://github.com/dev-murphy/sda-hymns-app/commit/c1e486b66776c998abba458f3a03763a2805cd94))
+* max out lighthouse score ([7683821](https://github.com/dev-murphy/sda-hymns-app/commit/7683821feaf6cdee14823275950439c5e9268f75))
+* move assets folder to src directory ([6c44e3d](https://github.com/dev-murphy/sda-hymns-app/commit/6c44e3dd5d19ce547924068163fbf548436ad4c4))
+* update auto-imported typedefs ([f2463cf](https://github.com/dev-murphy/sda-hymns-app/commit/f2463cfe99f72ce3bd50d4e62e5c7375f76d15e6))
+
 ## [1.1.2](https://github.com/dev-murphy/sda-hymns-app/compare/v1.1.1...v1.1.2) (2025-01-10)
 
 
