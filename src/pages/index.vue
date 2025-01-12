@@ -111,6 +111,7 @@ watch(
     </header>
 
     <div class="flex flex-col md:flex-row items-center gap-y-2 mt-5">
+      <SearchButton class="mr-2" />
       <Breadcrumbs />
       <Pagination
         class="md:ml-auto"
