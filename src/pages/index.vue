@@ -87,10 +87,10 @@ watch(
 </script>
 
 <template>
-  <div class="w-full max-w-[1240px] py-10 my-auto mx-auto">
+  <div class="w-full max-w-[1240px] py-10 mx-auto">
     <header class="flex flex-col items-center">
       <div class="flex items-center gap-x-2">
-        <img src="../../assets/images/logo.webp" alt="logo" class="w-12 h-14" />
+        <img src="../assets/images/logo.webp" alt="logo" class="w-12 h-14" />
         <h1 class="pt-3">
           <span class="block text-lg font-arima leading-3"
             >Seventh-day Adventist</span
