@@ -5,7 +5,8 @@ defineProps<{ hymn: HymnData }>();
 </script>
 
 <template>
-  <div
+  <RouterLink
+    :to="`/hymns/${hymn.hymn_number}`"
     class="flex flex-col md:flex-row items-start gap-x-3 px-3 py-2 hover:bg-neutral-200 cursor-pointer"
   >
     <h2
@@ -34,5 +35,5 @@ defineProps<{ hymn: HymnData }>();
     >
       {{ hymn.key }}
     </p>
-  </div>
+  </RouterLink>
 </template>
