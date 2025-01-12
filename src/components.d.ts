@@ -18,6 +18,7 @@ declare module 'vue' {
     ListView: typeof import('./components/home/ListView.vue')['default']
     Moon: typeof import('./components/icons/Moon.vue')['default']
     NarrowArrow: typeof import('./components/icons/NarrowArrow.vue')['default']
+    Navbar: typeof import('./components/hymn/Navbar.vue')['default']
     Pagination: typeof import('./components/common/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
