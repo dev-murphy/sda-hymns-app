@@ -25,12 +25,13 @@ watch(
       <div
         class="relative w-full max-w-[1200px] flex items-center justify-between mx-auto px-2 md:px-5"
       >
-        <button
-          class="flex items-center justify-between gap-x-1 hover:bg-neutral-300 px-0.5 md:px-1.5 py-0.5 font-medium rounded-md"
+        <RouterLink
+          to="/"
+          class="flex items-center justify-between gap-x-1 hover:bg-neutral-300 px-0.5 md:px-1.5 py-1 font-medium rounded-md"
         >
           <Chevron class="w-5 h-5 rotate-90" />
           <span class="hidden md:inline-block"> Back to Home </span>
-        </button>
+        </RouterLink>
         <p class="text-2xl text-center font-bold">
           <span class="block -mb-1.5 text-sm font-normal font-arima">
             Hymn #{{ route.params.hymnNo }}
