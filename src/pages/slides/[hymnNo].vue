@@ -66,12 +66,15 @@ const handleKeyPress = (e: KeyboardEvent) => {
 
 const target = ref(null);
 const { lengthX } = useSwipe(target, {
-  onSwipeEnd(e) {
+  onSwipeEnd() {
     if (!displayStanzas.value.length) return;
 
-    if (lengthX.value > 50 && currentVerse.value > 0) {
+    if (lengthX.value < -50 && currentVerse.value > 0) {
       currentVerse.value--; // Swipe right
-    } else if (lengthX.value < -50 && currentVerse.value < displayStanzas.value.length - 1) {
+    } else if (
+      lengthX.value > 50 &&
+      currentVerse.value < displayStanzas.value.length - 1
+    ) {
       currentVerse.value++; // Swipe left
     }
   },
@@ -89,7 +92,10 @@ onUnmounted(() => {
 <template>
   <div class="w-full min-h-screen">
     <Background />
-    <div ref="target" class="absolute inset-0 flex flex-col items-center px-4 text-white">
+    <div
+      ref="target"
+      class="absolute inset-0 flex flex-col items-center px-4 text-white"
+    >
       <h1 :class="[titleSize, 'mt-7 mb-4']">
         <span class="block text-2xl text-center font-thin"
           >Hymn #{{ route.params.hymnNo }}</span
