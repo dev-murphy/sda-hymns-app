@@ -40,13 +40,13 @@ const displayStanzas = computed(() => {
 const titleSize = computed(() => {
   if (width.value >= 1024) return "text-6xl"; // lg
   if (width.value >= 768) return "text-5xl"; // md
-  return "text-4xl"; // sm
+  return "text-3xl"; // sm
 });
 
 const verseSize = computed(() => {
   if (width.value >= 1024) return "text-5xl leading-[64px]";
   if (width.value >= 768) return "text-4xl leading-[52px]";
-  return "text-3xl leading-[40px]";
+  return "text-2xl leading-[40px]";
 });
 
 const handleKeyPress = (e: KeyboardEvent) => {
@@ -96,13 +96,13 @@ onUnmounted(() => {
       ref="target"
       class="absolute inset-0 flex flex-col items-center px-4 text-white"
     >
-      <h1 :class="[titleSize, 'mt-7 mb-4']">
-        <span class="block text-2xl text-center font-thin"
+      <h1 :class="[titleSize, 'mt-7 mb-4 text-center']">
+        <span class="block text-2xl font-thin"
           >Hymn #{{ route.params.hymnNo }}</span
         >
         {{ data?.title }}
       </h1>
-      <p class="text-3xl text-center font-arima text-white/80">
+      <p class="text-2xl md:text-3xl font-arima text-white/80">
         {{ displayStanzas[currentVerse]?.type.replace("_", " ") }}
       </p>
 
