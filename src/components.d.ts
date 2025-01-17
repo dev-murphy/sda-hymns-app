@@ -14,7 +14,6 @@ declare module 'vue' {
     Close: typeof import('./components/icons/Close.vue')['default']
     EnterKey: typeof import('./components/icons/EnterKey.vue')['default']
     Filter: typeof import('./components/icons/Filter.vue')['default']
-    FullSearch: typeof import('./components/icons/FullSearch.vue')['default']
     Grid: typeof import('./components/icons/Grid.vue')['default']
     HymnItem: typeof import('./components/home/HymnItem.vue')['default']
     LandscapeModal: typeof import('./components/modals/LandscapeModal.vue')['default']
