@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const { isLandscape } = useLandscape();
+
+onMounted(() => {
+  document.body.style.overflow = "hidden";
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "";
+});
 </script>
 
 <template>
