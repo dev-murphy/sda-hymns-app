@@ -29,7 +29,8 @@ export default defineConfig({
       manifest: {
         name: "SDA Hymns",
         short_name: "SDA Hymns",
-        theme_color: "#ffffff",
+        description:
+          "Explore the complete Seventh-day Adventist hymnal online. Search, browse, and sing along with your favourite hymns, all in an elegant and fast-loading Vue 3 experience. Worship made simple—visit now!",
         icons: [
           {
             src: "/pwa-192x192.png",
@@ -45,9 +46,15 @@ export default defineConfig({
             src: "/pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
-            purpose: "any maskable",
+            purpose: "any",
           },
         ],
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
+        start_url: "/",
+        scope: "/",
+        lang: "en",
+        display: "standalone",
       },
     }),
   ],
