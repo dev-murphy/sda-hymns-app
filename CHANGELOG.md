@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.5.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.4.0...v1.5.0) (2025-01-17)
+
+
+### Features
+
+* create presentation page ([f54784b](https://github.com/dev-murphy/sda-hymns-app/commit/f54784bcd1c1aaa8dcb9002b3d15bcb0bfa2637d))
+
+
+### Miscellaneous
+
+* add swipe to next hymn, center align hymn title ([cbb51a0](https://github.com/dev-murphy/sda-hymns-app/commit/cbb51a0f9545e9e8846c1c3ca8b875ea62eeafde))
+* complete tenth task ([f68d514](https://github.com/dev-murphy/sda-hymns-app/commit/f68d51463c4a263287314b627c1e529a45906bd8))
+* create background component ([7951ac4](https://github.com/dev-murphy/sda-hymns-app/commit/7951ac4d4b5100aa7d2f677504f0d939f1d73d42))
+* create present icon component ([8259734](https://github.com/dev-murphy/sda-hymns-app/commit/82597343ad68db8fc3267293d5f64fef0e6c0660))
+* update auto-imported typedef ([056d8e1](https://github.com/dev-murphy/sda-hymns-app/commit/056d8e1a599b57db3e0db7afedc617267a70da94))
+* update auto-imported typedef ([bc426b4](https://github.com/dev-murphy/sda-hymns-app/commit/bc426b48d6528c5b594c0e6dda4b3055213bf96a))
+* update route type, hide present text ([ff8e89e](https://github.com/dev-murphy/sda-hymns-app/commit/ff8e89ed07fc64dc838e814c00d1fa8fb135dec3))
+* update the swipe event ([2002eff](https://github.com/dev-murphy/sda-hymns-app/commit/2002eff03cf0cccdb7a9a5d0eeadbbbe4e822dce))
+
+
+### UI Updates
+
+* center align hymn number ([d6dde63](https://github.com/dev-murphy/sda-hymns-app/commit/d6dde6340e5c71b95d52d6ffae292b932d531fb0))
+* update font size and correct center align hymn title ([4b0ea6f](https://github.com/dev-murphy/sda-hymns-app/commit/4b0ea6fab54b827610ecab8f9bcd361a5a978c82))
+* update icon size, hide search text on small screens ([1481007](https://github.com/dev-murphy/sda-hymns-app/commit/148100770e980c343c163c2863676791c3c5da8b))
+* update overflow style to hidden on x axis ([a8d1ddf](https://github.com/dev-murphy/sda-hymns-app/commit/a8d1ddfd2430dc6579cd7a48262e139c4fe7daf4))
+
 ## [1.4.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.3.0...v1.4.0) (2025-01-17)
 
 
