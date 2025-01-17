@@ -25,7 +25,7 @@ export default defineConfig({
     WebfontDownload(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "safari-pinned-tab.svg"],
+      includeAssets: [],
       manifest: {
         name: "SDA Hymns",
         short_name: "SDA Hymns",
@@ -46,17 +46,6 @@ export default defineConfig({
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable",
-          },
-        ],
-      },
-      workbox: {
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/sda-hymns-app.vercel.app\//,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "api-cache",
-            },
           },
         ],
       },
