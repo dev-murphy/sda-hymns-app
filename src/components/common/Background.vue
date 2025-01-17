@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed w-full min-h-screen overflow-x-hidden bg-gradient-to-br from-rose-500 to-blue-500"
+    class="fixed w-full min-h-screen overflow-hidden bg-gradient-to-br from-rose-500 to-blue-500"
   >
     <div
       v-for="bubble in bubbles"
