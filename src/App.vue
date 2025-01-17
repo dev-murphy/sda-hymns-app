@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { usePreferredColorScheme } from "@vueuse/core";
+import LandscapeModal from "./components/modals/LandscapeModal.vue";
 const appStore = useAppStore();
 const colorTheme = usePreferredColorScheme();
 
@@ -24,9 +25,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="min-w-screen min-h-screen flex bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-white"
-  >
-    <RouterView />
+  <div>
+    <div
+      class="min-w-screen min-h-screen flex bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-white"
+    >
+      <RouterView />
+    </div>
+    <LandscapeModal />
   </div>
 </template>
