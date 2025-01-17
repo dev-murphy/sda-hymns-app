@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.6.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.5.0...v1.6.0) (2025-01-17)
+
+
+### Features
+
+* add landscape modal to root of app ([770cb9c](https://github.com/dev-murphy/sda-hymns-app/commit/770cb9c046d40ebfce62db90efe3cfeba7ebe9a3))
+* create landscape modal component ([0e47eb6](https://github.com/dev-murphy/sda-hymns-app/commit/0e47eb670812d0c8ada4d16edb54b31c65c9d416))
+
+
+### Bug Fixes
+
+* only show landscape modal on slides page ([5a3220b](https://github.com/dev-murphy/sda-hymns-app/commit/5a3220b9f4e3d217548d13af0eb953fc5ad7f2c0))
+
+
+### Miscellaneous
+
+* add composable dir to auto import config ([2fdc446](https://github.com/dev-murphy/sda-hymns-app/commit/2fdc4461600f994ce10f9ede6b7ec0e6b662b38f))
+* add tap on side to navigate through the verse ([2a198fe](https://github.com/dev-murphy/sda-hymns-app/commit/2a198fe6e804d1af4b9b4a3532a2b4beb965428d))
+* create composable for checking device orientation ([be43866](https://github.com/dev-murphy/sda-hymns-app/commit/be4386630fb93e401cb50f5c781019f559e7befb))
+* create composable that checks if user device is mobile ([9d90282](https://github.com/dev-murphy/sda-hymns-app/commit/9d902826511a14189cf371df75da1f397118c234))
+* prevent scroll on landscape model component ([36e72d6](https://github.com/dev-murphy/sda-hymns-app/commit/36e72d6fd9384a0d15f55691009f69309f3d84c5))
+* update auto-imported typedef ([aa42021](https://github.com/dev-murphy/sda-hymns-app/commit/aa42021ae6b586f1efb31f95f366a1c339dd7003))
+
+
+### UI Updates
+
+* resolve placement and overflow issue on background component ([26a6199](https://github.com/dev-murphy/sda-hymns-app/commit/26a61997f48f0269fb50689184721c0f7a829824))
+
 ## [1.5.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.4.0...v1.5.0) (2025-01-17)
 
 
