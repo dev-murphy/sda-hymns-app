@@ -17,6 +17,7 @@ declare module 'vue' {
     FullSearch: typeof import('./components/icons/FullSearch.vue')['default']
     Grid: typeof import('./components/icons/Grid.vue')['default']
     HymnItem: typeof import('./components/home/HymnItem.vue')['default']
+    LandscapeModal: typeof import('./components/modals/LandscapeModal.vue')['default']
     List: typeof import('./components/icons/List.vue')['default']
     ListView: typeof import('./components/home/ListView.vue')['default']
     Moon: typeof import('./components/icons/Moon.vue')['default']
