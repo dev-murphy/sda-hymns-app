@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { usePreferredColorScheme } from "@vueuse/core";
-import LandscapeModal from "./components/modals/LandscapeModal.vue";
+const route = useRoute();
 const appStore = useAppStore();
 const colorTheme = usePreferredColorScheme();
 
@@ -31,6 +30,6 @@ onMounted(() => {
     >
       <RouterView />
     </div>
-    <LandscapeModal />
+    <LandscapeModal v-if="route.fullPath.includes('/slides')" />
   </div>
 </template>
