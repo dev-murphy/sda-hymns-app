@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AudioPlayer: typeof import('./components/hymn/AudioPlayer.vue')['default']
+    Background: typeof import('./components/common/Background.vue')['default']
     Breadcrumbs: typeof import('./components/home/Breadcrumbs.vue')['default']
     Chevron: typeof import('./components/icons/Chevron.vue')['default']
     Close: typeof import('./components/icons/Close.vue')['default']

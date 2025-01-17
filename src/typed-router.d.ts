@@ -20,5 +20,6 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/hymns/[hymnNo]': RouteRecordInfo<'/hymns/[hymnNo]', '/hymns/:hymnNo', { hymnNo: ParamValue<true> }, { hymnNo: ParamValue<false> }>,
+    '/slides/[hymnNo]': RouteRecordInfo<'/slides/[hymnNo]', '/slides/:hymnNo', { hymnNo: ParamValue<true> }, { hymnNo: ParamValue<false> }>,
   }
 }
