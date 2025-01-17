@@ -19,7 +19,7 @@ watch(
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full min-h-screen flex flex-col">
     <Navbar />
     <div class="bg-neutral-200 py-2">
       <div
@@ -64,7 +64,7 @@ watch(
       </div>
     </div>
 
-    <div>
+    <div class="flex-grow">
       <div v-if="data" class="py-7">
         <ul v-for="(stanza, index) in stanzas" :key="stanza.type">
           <li class="text-center">
@@ -81,6 +81,15 @@ watch(
           </li>
         </ul>
       </div>
+    </div>
+
+    <!-- Music Player -->
+    <div v-if="data" class="sticky bottom-0 w-full bg-neutral-200 py-3">
+      <AudioPlayer
+        :audio-url="`https://github.com/dev-murphy/hymn-resources/raw/refs/heads/main/mp3/${encodeURI(
+          data.filename
+        )}`"
+      />
     </div>
   </div>
 </template>
