@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.3.0...v1.4.0) (2025-01-17)
+
+
+### Features
+
+* create audio player component ([c46aca4](https://github.com/dev-murphy/sda-hymns-app/commit/c46aca45d7a2bdc770ab11f3cdd683dfb4762dee))
+* create play, pause and stop icon component ([924e757](https://github.com/dev-murphy/sda-hymns-app/commit/924e757244a69e9715b2d2eb64ca68b5bb502781))
+
+
+### Miscellaneous
+
+* add audio player to hymn number page ([78d5685](https://github.com/dev-murphy/sda-hymns-app/commit/78d56856ff60e476dc74127b0d1c6036ad6e7081))
+* complete ninth task ([8c23867](https://github.com/dev-murphy/sda-hymns-app/commit/8c23867378e3585e2dda5e36a5d1d567cfffd617))
+* update auto-imported typedef ([18cc622](https://github.com/dev-murphy/sda-hymns-app/commit/18cc6222ee55c824c98b02570204a04d4716bbd3))
+
 ## [1.3.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.2.0...v1.3.0) (2025-01-12)
 
 
