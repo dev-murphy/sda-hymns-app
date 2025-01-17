@@ -79,7 +79,7 @@ onUnmounted(() => {
     <Background />
     <div class="absolute inset-0 flex flex-col items-center px-4 text-white">
       <h1 :class="[titleSize, 'mt-7 mb-4']">
-        <span class="block text-2xl font-thin"
+        <span class="block text-2xl text-center font-thin"
           >Hymn #{{ route.params.hymnNo }}</span
         >
         {{ data?.title }}
