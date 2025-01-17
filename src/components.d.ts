@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AudioPlayer: typeof import('./components/hymn/AudioPlayer.vue')['default']
     Breadcrumbs: typeof import('./components/home/Breadcrumbs.vue')['default']
     Chevron: typeof import('./components/icons/Chevron.vue')['default']
     Close: typeof import('./components/icons/Close.vue')['default']
@@ -20,6 +21,8 @@ declare module 'vue' {
     NarrowArrow: typeof import('./components/icons/NarrowArrow.vue')['default']
     Navbar: typeof import('./components/hymn/Navbar.vue')['default']
     Pagination: typeof import('./components/common/Pagination.vue')['default']
+    Pause: typeof import('./components/icons/Pause.vue')['default']
+    Play: typeof import('./components/icons/Play.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./components/icons/Search.vue')['default']
@@ -27,6 +30,7 @@ declare module 'vue' {
     SearchCommand: typeof import('./components/search/SearchCommand.vue')['default']
     SearchInput: typeof import('./components/search/SearchInput.vue')['default']
     Sort: typeof import('./components/icons/Sort.vue')['default']
+    Stop: typeof import('./components/icons/Stop.vue')['default']
     Sun: typeof import('./components/icons/Sun.vue')['default']
     XDropdown: typeof import('./components/common/XDropdown.vue')['default']
   }
