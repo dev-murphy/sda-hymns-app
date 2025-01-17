@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { HymnData } from "../../types";
-import { useWindowSize } from "@vueuse/core";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const route = useRoute<"/slides/[hymnNo]">();
@@ -65,6 +64,19 @@ const handleKeyPress = (e: KeyboardEvent) => {
   }
 };
 
+const target = ref(null);
+const { lengthX } = useSwipe(target, {
+  onSwipeEnd(e) {
+    if (!displayStanzas.value.length) return;
+
+    if (lengthX.value > 50 && currentVerse.value > 0) {
+      currentVerse.value--; // Swipe right
+    } else if (lengthX.value < -50 && currentVerse.value < displayStanzas.value.length - 1) {
+      currentVerse.value++; // Swipe left
+    }
+  },
+});
+
 onMounted(() => {
   window.addEventListener("keydown", handleKeyPress);
 });
@@ -77,14 +89,14 @@ onUnmounted(() => {
 <template>
   <div class="w-full min-h-screen">
     <Background />
-    <div class="absolute inset-0 flex flex-col items-center px-4 text-white">
+    <div ref="target" class="absolute inset-0 flex flex-col items-center px-4 text-white">
       <h1 :class="[titleSize, 'mt-7 mb-4']">
         <span class="block text-2xl text-center font-thin"
           >Hymn #{{ route.params.hymnNo }}</span
         >
         {{ data?.title }}
       </h1>
-      <p class="text-3xl font-arima text-white/80">
+      <p class="text-3xl text-center font-arima text-white/80">
         {{ displayStanzas[currentVerse]?.type.replace("_", " ") }}
       </p>
 
