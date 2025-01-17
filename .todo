@@ -17,10 +17,10 @@
 ✔ Create the indvidual hymn page @done(25-01-12 14:07)
     - needs basic info on hymn
     - needs lyrics with correct sections
+✔ Hymn Page: Add audio player @started(25-01-16 17:37) @done(25-01-16 19:41) @lasted(2h4m34s)
 ☐ Home Page: Add list and grid view 
 ☐ Home Page: Add theme toggle
 ☐ Home Page: Complete UI
-☐ Hymn Page: Add audio player
 ☐ Create presentation page
     - needs to show current section for selected hymn
     - needs to be slide through other sections using the arrow keys or mouse
