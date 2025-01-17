@@ -4,7 +4,7 @@ import Component from "unplugin-vue-components/vite";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
-import { VitePWA} from "vite-plugin-pwa"
+import { VitePWA } from "vite-plugin-pwa";
 import WebfontDownload from "vite-plugin-webfont-dl";
 
 // https://vite.dev/config/
@@ -46,6 +46,17 @@ export default defineConfig({
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable",
+          },
+        ],
+      },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/sda-hymns-app.vercel.app\//,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "api-cache",
+            },
           },
         ],
       },
