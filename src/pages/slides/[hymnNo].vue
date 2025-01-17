@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+import { useMobile } from "../../composables/mobile";
 import type { HymnData } from "../../types";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const route = useRoute<"/slides/[hymnNo]">();
-const { width } = useWindowSize();
+const { height } = useWindowSize();
+const { isMobile } = useMobile();
 
 const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
 
@@ -38,15 +40,15 @@ const displayStanzas = computed(() => {
 });
 
 const titleSize = computed(() => {
-  if (width.value >= 1024) return "text-6xl"; // lg
-  if (width.value >= 768) return "text-5xl"; // md
-  return "text-3xl"; // sm
+  if (height.value >= 900) return "text-6xl"; // Large screens
+  if (height.value >= 700) return "text-5xl"; // Medium screens
+  return "text-3xl"; // Small screens
 });
 
 const verseSize = computed(() => {
-  if (width.value >= 1024) return "text-5xl leading-[64px]";
-  if (width.value >= 768) return "text-4xl leading-[52px]";
-  return "text-2xl leading-[40px]";
+  if (height.value >= 900) return "text-5xl leading-[64px]";
+  if (height.value >= 700) return "text-4xl leading-[52px]";
+  return "text-lg ";
 });
 
 const handleKeyPress = (e: KeyboardEvent) => {
@@ -80,12 +82,30 @@ const { lengthX } = useSwipe(target, {
   },
 });
 
+const handleScreenClick = (e: MouseEvent) => {
+  if (!isMobile.value || !displayStanzas.value.length) return;
+
+  const screenWidth = window.innerWidth;
+  const clickX = e.clientX;
+
+  if (clickX < 100 && currentVerse.value > 0) {
+    currentVerse.value--;
+  } else if (
+    clickX >= screenWidth - 100 &&
+    currentVerse.value < displayStanzas.value.length - 1
+  ) {
+    currentVerse.value++;
+  }
+};
+
 onMounted(() => {
   window.addEventListener("keydown", handleKeyPress);
+  window.addEventListener("click", handleScreenClick);
 });
 
 onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyPress);
+  window.removeEventListener("click", handleScreenClick);
 });
 </script>
 
@@ -96,18 +116,37 @@ onUnmounted(() => {
       ref="target"
       class="absolute inset-0 flex flex-col items-center px-4 text-white"
     >
-      <h1 :class="[titleSize, 'mt-7 mb-4 text-center']">
-        <span class="block text-2xl font-thin"
+      <h1
+        :class="[
+          titleSize,
+          'mt-7  text-center',
+          {
+            'mb-2': isMobile,
+            'mb-4': !isMobile,
+          },
+        ]"
+      >
+        <span class="font-thin" :class="{ 'block text-2xl': !isMobile }"
           >Hymn #{{ route.params.hymnNo }}</span
         >
         {{ data?.title }}
       </h1>
-      <p class="text-2xl md:text-3xl font-arima text-white/80">
+      <p class="text-xl lg:text-3xl font-arima text-white/80">
         {{ displayStanzas[currentVerse]?.type.replace("_", " ") }}
       </p>
 
       <div class="flex flex-grow items-center">
-        <p v-if="data" :class="['py-7 text-center', verseSize]">
+        <p
+          v-if="data"
+          :class="[
+            'text-center',
+            verseSize,
+            {
+              'py-2': isMobile,
+              'py-7': !isMobile,
+            },
+          ]"
+        >
           <span
             v-for="(line, index) in displayStanzas[currentVerse]?.text.split(
               '\n'
