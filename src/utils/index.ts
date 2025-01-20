@@ -1,5 +1,3 @@
-import type { QueryParams } from "../types";
-
 export const getStringifyQuery = (query: Record<string, any>) => {
   return Object.entries(query)
     .filter(([_, value]) => value !== undefined && value !== "")
@@ -24,16 +22,15 @@ export const getCurrentPage = (offset: number, limit: number) => {
   return Math.ceil(offset / limit) + 1;
 };
 
-export function parseQueryString(queryString: string): QueryParams {
+export function parseQueryString<T extends Record<string, any>>(
+  queryString: string
+): T {
   const params: Record<string, string> = {};
+
   queryString.split("&").forEach((param) => {
     const [key, value] = param.split("=");
-    params[key] = value;
+    params[key] = decodeURIComponent(value || "");
   });
 
-  return {
-    limit: parseInt(params.limit || "10", 10),
-    offset: parseInt(params.offset || "0", 10),
-    categories: params.categories,
-  };
+  return params as unknown as T;
 }
