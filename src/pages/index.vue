@@ -1,36 +1,10 @@
 <script setup lang="ts">
-import { useFetch } from "@vueuse/core";
-import type { HymnData } from "../types";
+import { getCurrentPage, getStringifyQuery, setOffset } from "../utils";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const currentPage = ref(1);
 const route = useRoute();
 const router = useRouter();
-
-const getStringifyQuery = (query: Record<string, any>) => {
-  return Object.entries(query)
-    .filter(([_, value]) => value !== undefined && value !== "")
-    .map(([key, value]) => {
-      if (typeof value === "number") {
-        return `${key}=${value.toString()}`;
-      }
-
-      if (value === undefined) {
-        return "";
-      }
-      return `${key}=${value}`;
-    })
-    .join("&");
-};
-
-// Utitlity Functions
-const setOffset = (page: number, limit: number) => {
-  return (page - 1) * Number(limit);
-};
-
-const getCurrentPage = (offset: number, limit: number) => {
-  return Math.ceil(offset / limit) + 1;
-};
 
 const pageChanged = (page: number) => {
   currentPage.value = page;
@@ -62,11 +36,7 @@ if (route.query.offset === undefined && route.query.limit === undefined) {
 }
 
 const url = ref(`${API_URL}hymns?${getStringifyQuery(route.query)}`);
-const { data } = useFetch<{ count: number; hymns: HymnData[] }>(url, {
-  refetch: true,
-})
-  .get()
-  .json();
+const { data, fetchData } = useData(url);
 
 watch(
   () => route.query,
@@ -84,13 +54,15 @@ watch(
     if (Number(value) === 0) currentPage.value = 1;
   }
 );
+
+onMounted(fetchData);
 </script>
 
 <template>
   <div class="w-full max-w-[1240px] py-10 px-6 mx-auto">
     <header class="flex flex-col items-center">
       <div class="flex items-center gap-x-2">
-        <img src="../assets/images/logo.webp" alt="logo" class="w-12 h-14" />
+        <img src="/images/logo.webp" alt="logo" class="w-12 h-14" />
         <h1 class="pt-3">
           <span class="block text-lg font-arima leading-3"
             >Seventh-day Adventist</span
