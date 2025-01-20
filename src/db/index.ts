@@ -69,4 +69,34 @@ export function filterHymnsByCategories(
   });
 }
 
+export async function fetchHymn(hymnNumber: number) {
+  return (await db.hymns.where({ hymn_number: hymnNumber }).toArray())[0];
+}
+
+export async function fetchAllHymns() {
+  return db.hymns.toArray();
+}
+
+export async function fetchCategories() {
+  const hymns = await db.hymns.toArray();
+  return [...new Set(hymns.map((data) => data.category))];
+}
+
+export async function fetchSubcategories(category?: string) {
+  const hymns = await db.hymns
+    .filter(
+      (hymn) =>
+        hymn.category.toLowerCase().replace(" ", "-") === category &&
+        hymn.subcategory !== null
+    )
+    .toArray();
+
+  return [
+    "",
+    ...new Set(
+      hymns.filter((hymn) => hymn.subcategory).map((data) => data.subcategory)
+    ),
+  ];
+}
+
 export default db;
