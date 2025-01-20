@@ -1,5 +1,63 @@
 # Changelog
 
+## [1.7.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.6.0...v1.7.0) (2025-01-20)
+
+
+### Features
+
+* create data composable for online and offline mode ([b8c4365](https://github.com/dev-murphy/sda-hymns-app/commit/b8c43653f0601ba41cc009224f23c8abc55fa5c9))
+* create service worker file ([b9bb48a](https://github.com/dev-murphy/sda-hymns-app/commit/b9bb48a374614acbfb7edcd80a781c58d2db5f81))
+* setup dexie database ([79518c7](https://github.com/dev-murphy/sda-hymns-app/commit/79518c71f7f934d232e6977eb5eaa8e0d89057a6))
+
+
+### Bug Fixes
+
+* resolve issue to manifest config to make web app installable ([1f38dc5](https://github.com/dev-murphy/sda-hymns-app/commit/1f38dc5feaa45f0d18a4ba1ada42e7e968c1b8cb))
+
+
+### Miscellaneous
+
+* add all fetch functions to data composable ([0473feb](https://github.com/dev-murphy/sda-hymns-app/commit/0473febe41d6d27813818c8d47a0b6d72ef14d81))
+* add basic service worker file ([d566bee](https://github.com/dev-murphy/sda-hymns-app/commit/d566bee7116b5d63a3656eea855f6d874beea85a))
+* add fetch function for categories, subcategories, specific hymn, and all hymns ([8bc8f68](https://github.com/dev-murphy/sda-hymns-app/commit/8bc8f68cab9c33342438d0198a1f066f489c2817))
+* add hymn json file to load hymn data ([1c38c8f](https://github.com/dev-murphy/sda-hymns-app/commit/1c38c8f99196214e2f37b21b8b43ebeb76857a53))
+* add pwa config ([b4738bd](https://github.com/dev-murphy/sda-hymns-app/commit/b4738bdac02b439f2430dcd0544c6ec2e1d2fcb3))
+* add query param type def ([ae2ade3](https://github.com/dev-murphy/sda-hymns-app/commit/ae2ade3eb5c0d6b5e9aa8eb62a2ef729482615b7))
+* add workbox config to vite pwa config ([ddec8e1](https://github.com/dev-murphy/sda-hymns-app/commit/ddec8e1715463d292830817d2a1bec5142f3c1b2))
+* complete eleventh task ([ac77509](https://github.com/dev-murphy/sda-hymns-app/commit/ac775091d7761730949c0139a2fd0cb5f7e964f0))
+* complete twelfth task ([bb73b9b](https://github.com/dev-murphy/sda-hymns-app/commit/bb73b9b5b344eacb25c9bf6ec29829cda9586f8a))
+* create utils file ([a82a142](https://github.com/dev-murphy/sda-hymns-app/commit/a82a1427689bcb4edc5a8b4f9ea21de752c41b8c))
+* include image asset files ([d26a685](https://github.com/dev-murphy/sda-hymns-app/commit/d26a6855ea8cf94e2a8ca40c944156ccd04063bd))
+* install dexie deps ([e6c97a5](https://github.com/dev-murphy/sda-hymns-app/commit/e6c97a5b748e3fea7da89ea6ab1aef29cdaca535))
+* install vite-plugin-pwa deps ([f5b9ace](https://github.com/dev-murphy/sda-hymns-app/commit/f5b9ace12b0563dcb69cd699a222337e3c3a0ce8))
+* move logo to public folder ([c6527ea](https://github.com/dev-murphy/sda-hymns-app/commit/c6527ea831f5391f9cde97250776fc99227a6da7))
+* register service worker and preload dexie database with hymn data ([988f555](https://github.com/dev-murphy/sda-hymns-app/commit/988f5552bc7b8711ecd988d0ff020007f11fdf5e))
+* rename pwa images in public folder ([ae72045](https://github.com/dev-murphy/sda-hymns-app/commit/ae7204510257f9ad8eae6245a2c95209eaca154d))
+* update auto-imported typedef ([01eccac](https://github.com/dev-murphy/sda-hymns-app/commit/01eccac87965751910d9d3129c195985c7b03ead))
+* update auto-imported typedef ([0536b3b](https://github.com/dev-murphy/sda-hymns-app/commit/0536b3bbafa5a58015144fff73ce0ddaa9eac42c))
+* update PWA config ([3d0e5d8](https://github.com/dev-murphy/sda-hymns-app/commit/3d0e5d8c7e6d94fcf4651899e71305ad78c9c1d8))
+
+
+### Documentation
+
+* add more to dos to .todo file ([201b41f](https://github.com/dev-murphy/sda-hymns-app/commit/201b41fd720310c98cde3a8058ed3ec71bf7fee6))
+
+
+### Code Refactors
+
+* cache assets folder ([0c23324](https://github.com/dev-murphy/sda-hymns-app/commit/0c23324a4ec076c258ea5dd874c230cc866610a3))
+* made parseQueryParams function with generic type ([33c86fd](https://github.com/dev-murphy/sda-hymns-app/commit/33c86fda74bfac8fa68caecbac45c954fae4e2cd))
+* remove manifest file ([87e1454](https://github.com/dev-murphy/sda-hymns-app/commit/87e14540aac74e8b113cca27ddad30e607fefedf))
+* remove non-existent assets, update start_url ([426fe39](https://github.com/dev-murphy/sda-hymns-app/commit/426fe39d46a6089bbfec7cca9dadc1f5185242ed))
+* replace useFetch with useData composable ([1160e2f](https://github.com/dev-murphy/sda-hymns-app/commit/1160e2f74373a21afe0cbfeda814051ac57d3f6a))
+* replace useFetch with useData composable ([5beaf93](https://github.com/dev-murphy/sda-hymns-app/commit/5beaf939185b0d002703a0646c90c68a91eb088d))
+* update logo url to public folder ([a2bed5e](https://github.com/dev-murphy/sda-hymns-app/commit/a2bed5e2fcc25de8e7bbe4c48d6ff246a0f311ec))
+
+
+### UI Updates
+
+* resolve weird overflow problem ([1bd0847](https://github.com/dev-murphy/sda-hymns-app/commit/1bd084791c3f494c34eda28d8c933de1b22fc21d))
+
 ## [1.6.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.5.0...v1.6.0) (2025-01-17)
 
 
