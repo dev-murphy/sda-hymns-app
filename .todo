@@ -22,7 +22,7 @@
     - needs to show current section for selected hymn
     - needs to be slide through other sections using the arrow keys or mouse
 ✔ Make website PWA @started(25-01-17 11:56) @done(25-01-17 13:09) @lasted(1h13m2s)
-☐ Make app local first using Dexie
+✔ Make app local first using Dexie @started(25-01-19 10:03) @done(25-01-19 22:10) @lasted(12h7m52s)
 ☐ Allow user to favorite hymns
 ☐ Add button that allow users to get a random hymn
 ☐ Home Page: Add list and grid view 
