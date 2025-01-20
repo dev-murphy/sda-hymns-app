@@ -60,6 +60,21 @@ export default defineConfig({
         lang: "en",
         display: "standalone",
       },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^\/.*/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "app-shell",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
+        ],
+      },
     }),
   ],
 });
