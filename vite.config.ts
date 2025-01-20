@@ -25,7 +25,11 @@ export default defineConfig({
     WebfontDownload(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: [],
+      includeAssets: [
+        "favicon.ico",
+        "apple-touch-icon.png",
+        "images/logo.webp",
+      ],
       manifest: {
         name: "SDA Hymns",
         short_name: "SDA Hymns",
