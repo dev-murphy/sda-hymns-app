@@ -9,10 +9,11 @@ const { isMobile } = useMobile();
 
 const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
 
-const { data } = useFetch<HymnData>(hymnUrl, { refetch: true }).get().json();
-const stanzas = computed(() => {
+const { data, fetchData } = useData<HymnData>(hymnUrl);
+const stanzas = computed<{ text: string; type: string }[]>(() => {
   if (!data.value) return [];
-  return JSON.parse(data.value.stanzas) as { text: string; type: string }[];
+  if (typeof data.value.stanzas !== "string") return data.value.stanzas;
+  return JSON.parse(data.value.stanzas);
 });
 
 const currentVerse = ref(0);
@@ -99,6 +100,7 @@ const handleScreenClick = (e: MouseEvent) => {
 };
 
 onMounted(() => {
+  fetchData();
   window.addEventListener("keydown", handleKeyPress);
   window.addEventListener("click", handleScreenClick);
 });

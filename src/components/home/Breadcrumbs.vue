@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useFetch } from "@vueuse/core";
+// import { fetchCategories, fetchSubcategories } from "../../db";
 
 const router = useRouter();
 const route = useRoute();
@@ -26,14 +26,11 @@ if (route.query.categories !== undefined) {
   }
 }
 
-const { data: categories } = useFetch<string[]>(`${API_URL}categories`)
-  .get()
-  .json();
-const { data: subcategories } = useFetch<string[]>(subcateogryUrl, {
-  refetch: true,
-})
-  .get()
-  .json();
+const { data: categories, fetchData: fetchCategories } = useData<string[]>(
+  `${API_URL}categories`
+);
+const { data: subcategories, fetchData: fetchSubcategories } =
+  useData<string[]>(subcateogryUrl);
 
 watch(
   () => category.value,
@@ -72,6 +69,11 @@ watch(
     });
   }
 );
+
+onMounted(() => {
+  fetchCategories();
+  fetchSubcategories();
+});
 </script>
 
 <template>

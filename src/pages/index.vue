@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { HymnData } from "../types";
 import { getCurrentPage, getStringifyQuery, setOffset } from "../utils";
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -36,7 +37,7 @@ if (route.query.offset === undefined && route.query.limit === undefined) {
 }
 
 const url = ref(`${API_URL}hymns?${getStringifyQuery(route.query)}`);
-const { data, fetchData } = useData(url);
+const { data, fetchData } = useData<{ count: number; hymns: HymnData[] }>(url);
 
 watch(
   () => route.query,

@@ -5,7 +5,7 @@ const emit = defineEmits<{ (e: "close"): void }>();
 
 const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
-const { data, isFetching } = useFetch<string>(`${API_URL}hymns/all`);
+const { data, fetchData, isLoading } = useData<string>(`${API_URL}hymns/all`);
 
 const selectedHymn = ref(-1);
 const query = ref("");
@@ -42,8 +42,13 @@ watch(
   () => data.value,
   (value) => {
     if (value === null) return;
+    let actualValue = value;
 
-    fuse.value = new Fuse(JSON.parse(value), {
+    if (typeof value === "string") {
+      actualValue = JSON.stringify(value);
+    }
+
+    fuse.value = new Fuse(actualValue, {
       includeScore: true,
       threshold: 0.3,
       keys: ["hymn_number", "title", "first_line", "author", "stanzas"],
@@ -52,6 +57,7 @@ watch(
 );
 
 onMounted(() => {
+  fetchData();
   document.body.style.overflow = "hidden";
   window.addEventListener("keydown", handleKeyDown);
 });
@@ -88,7 +94,7 @@ function scrollToSelected() {
       <div
         class="flex flex-grow items-center justify-center py-2 overflow-y-auto"
       >
-        <div v-if="isFetching" class="text-center p-4 text-gray-500">
+        <div v-if="isLoading" class="text-center p-4 text-gray-500">
           Loading hymns...
         </div>
         <div v-else-if="searchResults?.length === 0">No hymns found.</div>

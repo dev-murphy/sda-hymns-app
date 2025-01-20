@@ -3,12 +3,17 @@ import type { HymnData } from "../../types";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const route = useRoute<"/hymns/[hymnNo]">();
+const { isOnline } = useNetwork();
+
 const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
 
-const { data } = useFetch<HymnData>(hymnUrl, { refetch: true }).get().json();
-const stanzas = computed(
-  () => JSON.parse(data.value.stanzas) as { text: string; type: string }[]
-);
+const { data, fetchData } = useData<HymnData>(hymnUrl);
+const stanzas = computed(() => {
+  if (typeof data.value.stanzas !== "string") {
+    return data.value.stanzas;
+  }
+  return JSON.parse(data.value.stanzas) as { text: string; type: string }[];
+});
 
 watch(
   () => route.params.hymnNo,
@@ -16,6 +21,8 @@ watch(
     hymnUrl.value = `${API_URL}hymns/${value}`;
   }
 );
+
+onMounted(fetchData);
 </script>
 
 <template>
@@ -84,7 +91,10 @@ watch(
     </div>
 
     <!-- Music Player -->
-    <div v-if="data" class="sticky bottom-0 w-full bg-neutral-200 py-3">
+    <div
+      v-if="data && isOnline"
+      class="sticky bottom-0 w-full bg-neutral-200 py-3"
+    >
       <AudioPlayer
         :audio-url="`https://github.com/dev-murphy/hymn-resources/raw/refs/heads/main/mp3/${encodeURI(
           data.filename
