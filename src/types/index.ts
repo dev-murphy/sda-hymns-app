@@ -11,3 +11,9 @@ export interface HymnData {
   composer?: string;
   author?: string;
 }
+
+export interface QueryParams {
+  limit: number;
+  offset: number;
+  categories?: string;
+}
