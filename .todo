@@ -24,7 +24,18 @@
 ✔ Make website PWA @started(25-01-17 11:56) @done(25-01-17 13:09) @lasted(1h13m2s)
 ✔ Make app local first using Dexie @started(25-01-19 10:03) @done(25-01-19 22:10) @lasted(12h7m52s)
 ☐ Allow user to favorite hymns
-☐ Add button that allow users to get a random hymn
-☐ Home Page: Add list and grid view 
+    ☐ Allow user to mark hymns as favorites locally
+    ☐ Inplement sign up and login flow
+    ☐ Allow user to mark hymns as favorites online
 ☐ Home Page: Add theme toggle
+    ☐ Create a settings page with user section and theme section
+    ☐ Implement basic color modes using `tailwindcss`, `useColorMode` and `css var(...)`
+    ☐ Allow user to toggle between the different color modes
+    ☐ Allow user to create a custom color scheme
+☐ Hymn Page: Implement editable hymns
+    ☐ Allow user to edit existing hymns locally
+    ☐ Create modal informing the user that edited hymns are personal but can be synced between their devices by logging in
+    ☐ Allow user to sync edited hymns online (Sync engine??)
+☐ Add button that allow users to get a random hymn
 ☐ Home Page: Complete UI
+    ☐ Add scroll to top button
