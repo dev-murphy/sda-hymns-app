@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.8.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.7.0...v1.8.0) (2025-01-21)
+
+
+### Features
+
+* create 404 and error page ([f1eb0c6](https://github.com/dev-murphy/sda-hymns-app/commit/f1eb0c60a8f4056891d41bd3dd298fdb7fdd1caa))
+
+
+### Miscellaneous
+
+* add music notes icon to assets ([f4aeb02](https://github.com/dev-murphy/sda-hymns-app/commit/f4aeb0234eb93f0fcec4eee7900c6b57742287d7))
+* add navigation guard for hymns and slide pages ([ad41caa](https://github.com/dev-murphy/sda-hymns-app/commit/ad41caa6a9399057e1e3b9b264ebd0700f408d92))
+* create home icon comoonent ([ace3165](https://github.com/dev-murphy/sda-hymns-app/commit/ace3165b4e710859f2af4b508c51705509e08c68))
+* handle custom keyboard events for opening and closing search modal ([12fcd3b](https://github.com/dev-murphy/sda-hymns-app/commit/12fcd3bafb4f4c23331368de6ad21c694b76d4d8))
+* update auto-imported typedef ([9f4fbb4](https://github.com/dev-murphy/sda-hymns-app/commit/9f4fbb4a62b79d3b0315827797d158d7e82eb8b8))
+
+
+### Documentation
+
+* update TODO file with upcoming tasks ([b3f8bd5](https://github.com/dev-murphy/sda-hymns-app/commit/b3f8bd5a979b9a8ac8da708fa1c4910abf3b4801))
+
+
+### Code Refactors
+
+* update svg for search icon ([74bcd61](https://github.com/dev-murphy/sda-hymns-app/commit/74bcd61bfadf1431912198cfb399c96fe56b1a62))
+
+
+### UI Updates
+
+* add keyboard command UI to search button ([c1c5ef9](https://github.com/dev-murphy/sda-hymns-app/commit/c1c5ef9b1dd37671fd91adeb5ee367d3cbe6a6db))
+
 ## [1.7.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.6.0...v1.7.0) (2025-01-20)
 
 
