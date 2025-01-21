@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.0...v1.8.1) (2025-01-21)
+
+
+### Documentation
+
+* update README with tools used and current/incoming features ([49aa024](https://github.com/dev-murphy/sda-hymns-app/commit/49aa02458a87a8e7e5954819635075b352c7ea19))
+
 ## [1.8.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.7.0...v1.8.0) (2025-01-21)
 
 
