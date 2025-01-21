@@ -17,6 +17,10 @@ const searchResults = computed(() => {
 });
 
 function handleKeyDown(event: KeyboardEvent) {
+  if (event.key === "Escape") {
+    emit("close");
+  }
+
   if (searchResults.value === undefined) return;
 
   if (event.key === "ArrowUp") {

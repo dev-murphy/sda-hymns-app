@@ -43,6 +43,12 @@ const emit = defineEmits(["update:modelValue"]);
 const inputRef = ref<HTMLInputElement | null>(null);
 
 function onInput(event: Event) {
+  const keyboardEvent = event as KeyboardEvent;
+
+  if (keyboardEvent.key === "Escape") {
+    return;
+  }
+
   const target = event.target as HTMLInputElement;
   emit("update:modelValue", target.value);
 }
