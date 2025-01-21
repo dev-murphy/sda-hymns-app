@@ -6,12 +6,22 @@ Welcome to the SDA Hymns App! This project is built with Vue 3 and Tailwind CSS,
 
 - Browse and search through a collection of hymns
 - Responsive design for optimal viewing on all devices
-- Light and dark mode support
+- Multiple color modes support
 - Simple and intuitive user interface
+- MIDI/Audio for most hymns
+- Present mode for live worship
 
 ## 💻 Tech Stack
 
 - **Vue 3 [Typescript]**: Web framework for building user interfaces powered up by typescript
+- **Vite**: Next generation frontend tooling for fast development and building
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Pinia**: Intuitive, type safe, and flexible Vue Store
+- **VueUse**: Collection of essential Vue Composition Utilities
+- **Dexie.js**: Minimalistic IndexedDB wrapper for client-side storage
+- **Fuse.js**: Lightweight fuzzy-search library
+- **PWA Support**: Progressive Web App capabilities for offline access
+- **Vue Router**: Official router for Vue.js applications
 
 ## 📝 What am I working on?
 
