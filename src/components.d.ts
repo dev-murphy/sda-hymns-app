@@ -30,6 +30,7 @@ declare module 'vue' {
     Present: typeof import('./components/icons/Present.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollToTop: typeof import('./components/common/ScrollToTop.vue')['default']
     Search: typeof import('./components/icons/Search.vue')['default']
     SearchButton: typeof import('./components/search/SearchButton.vue')['default']
     SearchCommand: typeof import('./components/search/SearchCommand.vue')['default']
