@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { HymnData } from "../../types";
 
-defineProps<{ hymn: HymnData }>();
+defineProps<{ hymn: Partial<HymnData> }>();
 </script>
 
 <template>

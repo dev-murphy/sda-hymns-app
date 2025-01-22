@@ -103,19 +103,11 @@ function scrollToSelected() {
         </div>
         <div v-else-if="searchResults?.length === 0">No hymns found.</div>
         <ul v-else class="search-result w-full h-full list-none p-0 m-0">
-          <li
-            v-for="(result, index) in searchResults"
+          <HymnItem
+            v-for="result in searchResults"
             :key="result.hymn_number"
-            class="py-2 px-4 cursor-pointer"
-            :class="[
-              { 'bg-neutral-100': index === selectedHymn },
-              `search-result_${index + 1}`,
-            ]"
-            @mouseenter="selectedHymn = index"
-            @click="goToHymn(result.hymn_number)"
-          >
-            {{ result.title }} ({{ result.hymn_number }})
-          </li>
+            :hymn="result"
+          />
         </ul>
       </div>
 
