@@ -30,6 +30,8 @@ onMounted(() => {
     >
       <RouterView />
     </div>
+    <!-- Modals -->
     <LandscapeModal v-if="route.fullPath.includes('/slides')" />
+    <ScrollToTop />
   </div>
 </template>
