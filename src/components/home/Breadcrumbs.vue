@@ -77,12 +77,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex items-center gap-x-2">
+  <div class="flex items-center gap-x-1">
     <p>Hymns</p>
     <Chevron class="w-5 h-5 -rotate-90" />
     <XDropdown
       :value="category"
       :options="categories || []"
+      type="flat"
+      default-text="Categories"
       @input="(value: string | number) => { category = value as string;}"
     />
     <div v-if="subcategories?.length !== 0" class="flex items-center">
@@ -90,6 +92,8 @@ onMounted(() => {
       <XDropdown
         :value="subcategory"
         :options="subcategories || []"
+        type="flat"
+        default-text="Subcategories"
         @input="(value: string | number) => { subcategory = value as string;}"
       />
     </div>
