@@ -21,7 +21,6 @@ declare module 'vue' {
     List: typeof import('./components/icons/List.vue')['default']
     ListView: typeof import('./components/home/ListView.vue')['default']
     Moon: typeof import('./components/icons/Moon.vue')['default']
-    MusicNotes: typeof import('./components/icons/MusicNotes.vue')['default']
     NarrowArrow: typeof import('./components/icons/NarrowArrow.vue')['default']
     Navbar: typeof import('./components/hymn/Navbar.vue')['default']
     Pagination: typeof import('./components/common/Pagination.vue')['default']
