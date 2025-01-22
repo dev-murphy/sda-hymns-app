@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.1...v1.9.0) (2025-01-22)
+
+
+### Features
+
+* create scroll to top component ([aac326c](https://github.com/dev-murphy/sda-hymns-app/commit/aac326cf4ef63b64e67d123ba2d7dc646081e280))
+
+
+### Miscellaneous
+
+* add scroll to top component to app ([777ae6e](https://github.com/dev-murphy/sda-hymns-app/commit/777ae6eeac26e6aa6804c459ec4195835dcc8c70))
+* complete scroll to top feature ([b94b4a1](https://github.com/dev-murphy/sda-hymns-app/commit/b94b4a1f021d4c3142f749219f848ff86f066c8d))
+* update auto-imported typedef ([407d40e](https://github.com/dev-murphy/sda-hymns-app/commit/407d40e2d1eaeb5756f997fd25ef0716fc5090e8))
+
 ## [1.8.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.0...v1.8.1) (2025-01-21)
 
 
