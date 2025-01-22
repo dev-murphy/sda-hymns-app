@@ -1,11 +1,21 @@
 <template>
   <div ref="dropdownMenu" class="relative inline-block">
     <button
-      class="flex items-center gap-x-3 bg-gray-100 border border-gray-300 p-2 cursor-pointer rounded-lg"
+      class="flex items-center gap-x-3 cursor-pointer"
+      :class="{
+        'bg-gray-100 border border-gray-300  p-2 rounded-lg':
+          type === 'default',
+        '': type === 'flat',
+        'underline font-medium': type === 'flat' && isOpen,
+      }"
       @click="toggleDropdown"
     >
       {{ selectedLabel }}
-      <Chevron class="w-5 h-5 transition" :class="{ 'rotate-180': isOpen }" />
+      <Chevron
+        v-if="type === 'default'"
+        class="w-5 h-5 transition"
+        :class="{ 'rotate-180': isOpen }"
+      />
     </button>
     <div
       v-if="isOpen"
@@ -36,9 +46,13 @@ const props = withDefaults(
     options: (string | number)[];
     value: string | number;
     position?: string;
+    type?: "flat" | "default";
+    defaultText?: string;
   }>(),
   {
     position: "bottom",
+    type: "default",
+    defaultText: "Select an option",
   }
 );
 
@@ -49,7 +63,7 @@ const emit = defineEmits<{
 const dropdownMenu = ref<HTMLElement | null>(null);
 const isOpen = ref(false);
 const selectedLabel = computed(() =>
-  props.value === "" ? "Select an option" : String(props.value)
+  props.value === "" ? props.defaultText : String(props.value)
 );
 
 const toggleDropdown = () => {
