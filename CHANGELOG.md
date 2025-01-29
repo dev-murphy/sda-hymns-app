@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.9.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.1...v1.9.0) (2025-01-29)
+
+
+### Features
+
+* create scroll to top component ([aac326c](https://github.com/dev-murphy/sda-hymns-app/commit/aac326cf4ef63b64e67d123ba2d7dc646081e280))
+
+
+### Miscellaneous
+
+* add hymn item to search command component ([aa2e160](https://github.com/dev-murphy/sda-hymns-app/commit/aa2e160d50febe4055b99e008bb3d11fadf08327))
+* add scroll to top component to app ([777ae6e](https://github.com/dev-murphy/sda-hymns-app/commit/777ae6eeac26e6aa6804c459ec4195835dcc8c70))
+* complete scroll to top feature ([b94b4a1](https://github.com/dev-murphy/sda-hymns-app/commit/b94b4a1f021d4c3142f749219f848ff86f066c8d))
+* update auto-imported typedef ([c40c289](https://github.com/dev-murphy/sda-hymns-app/commit/c40c2891bc4931bda342979aa150a71739f3c491))
+* update auto-imported typedef ([407d40e](https://github.com/dev-murphy/sda-hymns-app/commit/407d40e2d1eaeb5756f997fd25ef0716fc5090e8))
+* update dropdown component props in breadcrumbs component ([2326746](https://github.com/dev-murphy/sda-hymns-app/commit/23267461276dff8e0ecdae0786ab195c96c23f01))
+
+
+### Code Refactors
+
+* close dropdown modal when click outside ([f451786](https://github.com/dev-murphy/sda-hymns-app/commit/f4517866ae42bffaa41c7eaebc42e2f9013dfe9e))
+* remove unused page input ([1f7f32d](https://github.com/dev-murphy/sda-hymns-app/commit/1f7f32d7cd13c7c80d9cc6fe1688b71ab9560436))
+
+
+### UI Updates
+
+* add flat styling to dropdown menu, add defaylt text props ([5e2eb61](https://github.com/dev-murphy/sda-hymns-app/commit/5e2eb616caca4264d785f52c15290b9864593e07))
+
 ## [1.8.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.0...v1.8.1) (2025-01-21)
 
 
