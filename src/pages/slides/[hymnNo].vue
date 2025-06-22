@@ -126,7 +126,7 @@ onUnmounted(() => {
     >
       <RouterLink
         :to="`/hymns/${route.params.hymnNo}`"
-        class="group absolute top-4 right-4 flex items-center gap-x-1 bg-white hover:bg-neutral-200 active:bg-red-500 px-3 py-2 text-black active:text-white font-semibold rounded-md transition-colors"
+        class="group absolute top-4 right-4 flex items-center gap-x-1 bg-white hover:bg-neutral-200 active:bg-red-500 px-3 py-2 text-black active:text-white font-semibold rounded-md transition-colors active:duration-0"
       >
         Close
         <span
