@@ -26,6 +26,14 @@ const route = useRoute() as RouteLocationNormalizedLoaded & {
       >
         <Present class="w-5 h-5" />
         <p class="hidden md:inline">Present</p>
+        <span
+          class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
+          >Ctrl</span
+        >
+        <span
+          class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
+          >P</span
+        >
       </RouterLink>
       <SearchButton />
     </nav>

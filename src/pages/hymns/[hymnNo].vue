@@ -2,6 +2,7 @@
 import type { HymnData } from "../../types";
 
 const API_URL = import.meta.env.VITE_API_URL;
+const router = useRouter();
 const route = useRoute<"/hymns/[hymnNo]">();
 const { isOnline } = useNetwork();
 
@@ -22,7 +23,18 @@ watch(
   }
 );
 
-onMounted(fetchData);
+const handleKeyDown = (evnt: KeyboardEvent) => {
+  if (evnt.ctrlKey && evnt.key === "p") {
+    evnt.preventDefault();
+    router.push(`/slides/${route.params.hymnNo}`);
+  }
+};
+
+onMounted(() => {
+  fetchData();
+
+  window.addEventListener("keydown", handleKeyDown);
+});
 </script>
 
 <template>

@@ -3,6 +3,7 @@ import { useMobile } from "../../composables/mobile";
 import type { HymnData } from "../../types";
 
 const API_URL = import.meta.env.VITE_API_URL;
+const router = useRouter();
 const route = useRoute<"/slides/[hymnNo]">();
 const { height } = useWindowSize();
 const { isMobile } = useMobile();
@@ -65,6 +66,10 @@ const handleKeyPress = (e: KeyboardEvent) => {
   ) {
     currentVerse.value++;
   }
+
+  if (e.key === "Escape") {
+    router.push(`/hymns/${route.params.hymnNo}`);
+  }
 };
 
 const target = ref(null);
@@ -114,10 +119,21 @@ onUnmounted(() => {
 <template>
   <div class="w-full min-h-screen">
     <Background />
+
     <div
       ref="target"
       class="absolute inset-0 flex flex-col items-center px-4 text-white"
     >
+      <RouterLink
+        :to="`/hymns/${route.params.hymnNo}`"
+        class="group absolute top-4 right-4 flex items-center gap-x-1 bg-white hover:bg-neutral-200 active:bg-red-500 px-3 py-2 text-black active:text-white font-semibold rounded-md transition-colors"
+      >
+        Close
+        <span
+          class="border-2 border-b-4 border-neutral-400 group-active:border-white p-px px-1.5 mt-0.5 ml-1 text-[12px] font-mono rounded-md"
+          >Esc</span
+        >
+      </RouterLink>
       <h1
         :class="[
           titleSize,

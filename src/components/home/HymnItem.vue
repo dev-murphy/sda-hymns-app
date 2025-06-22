@@ -5,8 +5,7 @@ defineProps<{ hymn: Partial<HymnData> }>();
 </script>
 
 <template>
-  <RouterLink
-    :to="`/hymns/${hymn.hymn_number}`"
+  <div
     class="flex flex-col md:flex-row items-start gap-x-3 px-3 py-2 hover:bg-neutral-200 cursor-pointer"
   >
     <h2
@@ -15,7 +14,7 @@ defineProps<{ hymn: Partial<HymnData> }>();
       {{ hymn.hymn_number
       }}<span class="inline md:hidden font-normal">. {{ hymn.title }}</span>
     </h2>
-    <div>
+    <div class="">
       <p class="font-arima font-medium">
         <span class="hidden md:inline">
           {{ hymn.title }}
@@ -35,5 +34,5 @@ defineProps<{ hymn: Partial<HymnData> }>();
     >
       {{ hymn.key }}
     </p>
-  </RouterLink>
+  </div>
 </template>

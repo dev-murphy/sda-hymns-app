@@ -102,13 +102,16 @@ function scrollToSelected() {
           Loading hymns...
         </div>
         <div v-else-if="searchResults?.length === 0">No hymns found.</div>
-        <ul v-else class="search-result w-full h-full list-none p-0 m-0">
-          <HymnItem
-            v-for="result in searchResults"
-            :key="result.hymn_number"
-            :hymn="result"
-          />
-        </ul>
+        <div v-else class="search-result w-full h-full flex flex-col">
+          <button
+            v-for="hymn in searchResults"
+            :key="hymn.hymn_number"
+            class="text-left"
+            @click="goToHymn(hymn.hymn_number)"
+          >
+            <HymnItem :hymn="hymn" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -125,7 +128,10 @@ function scrollToSelected() {
           <p>to navigate</p>
         </div>
         <div class="flex gap-x-2">
-          <p class="mb-auto font-mono font-semibold text-sm">esc</p>
+          <span
+            class="border-2 border-b-4 border-neutral-400 p-px px-1.5 ml-1 text-[12px] font-mono rounded-md"
+            >Esc</span
+          >
           <p>to close</p>
         </div>
       </div>

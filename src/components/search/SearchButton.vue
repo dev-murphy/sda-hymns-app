@@ -1,3 +1,22 @@
+<script lang="ts" setup>
+const isSearchCommandOpen = ref(false);
+
+const toggleSearchCommand = () => {
+  isSearchCommandOpen.value = !isSearchCommandOpen.value;
+};
+
+const handleKeydown = (evnt: KeyboardEvent) => {
+  if (evnt.ctrlKey && evnt.key === "k") {
+    evnt.preventDefault();
+    toggleSearchCommand();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeydown);
+});
+</script>
+
 <template>
   <div>
     <button
@@ -26,22 +45,3 @@
     </Teleport>
   </div>
 </template>
-
-<script lang="ts" setup>
-const isSearchCommandOpen = ref(false);
-
-const toggleSearchCommand = () => {
-  isSearchCommandOpen.value = !isSearchCommandOpen.value;
-};
-
-const handleKeydown = (evnt: KeyboardEvent) => {
-  if (evnt.ctrlKey && evnt.key === "k") {
-    evnt.preventDefault();
-    toggleSearchCommand();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("keydown", handleKeydown);
-});
-</script>
