@@ -9,11 +9,37 @@ const { isOnline } = useNetwork();
 const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
 
 const { data, fetchData } = useData<HymnData>(hymnUrl);
-const stanzas = computed(() => {
-  if (typeof data.value.stanzas !== "string") {
-    return data.value.stanzas;
+
+const stanzas = computed<{ text: string; type: string }[]>(() => {
+  if (!data.value) return [];
+  if (typeof data.value.stanzas !== "string") return data.value.stanzas;
+  return JSON.parse(data.value.stanzas);
+});
+
+const hasRefrain = computed(() =>
+  stanzas.value.some((stanza) => stanza.type.toLowerCase() === "refrain")
+);
+
+// Parse stanzas and handle refrain repetition
+const displayStanzas = computed(() => {
+  if (!hasRefrain.value) return stanzas.value;
+
+  const verses = stanzas.value.filter(
+    (s) => s.type.toLowerCase() !== "refrain"
+  );
+  const refrain = stanzas.value.find((s) => s.type.toLowerCase() === "refrain");
+
+  const updatedStanzas = verses.reduce((acc, verse) => {
+    acc.push(verse);
+    if (refrain) acc.push(refrain);
+    return acc;
+  }, [] as typeof stanzas.value);
+
+  if (route.params.hymnNo === "93") {
+    return refrain ? [refrain, ...updatedStanzas] : updatedStanzas;
+  } else {
+    return updatedStanzas;
   }
-  return JSON.parse(data.value.stanzas) as { text: string; type: string }[];
 });
 
 watch(
@@ -83,12 +109,31 @@ onMounted(() => {
       </div>
     </div>
 
+    <!-- Verses and Choruses -->
     <div class="flex-grow">
-      <div v-if="data" class="py-7">
-        <ul v-for="(stanza, index) in stanzas" :key="stanza.type">
+      <div v-if="displayStanzas" class="py-7">
+        <ul
+          v-for="(stanza, index) in displayStanzas"
+          :key="`${stanza.type}-${index}`"
+        >
           <li class="text-center">
-            <p class="my-3">{{ stanza.type.replace("_", " ") }}</p>
-            <p>
+            <p
+              class="my-3 font-bold"
+              :class="{
+                'italic font-arima': stanza.type === 'REFRAIN',
+              }"
+            >
+              {{
+                stanza.type === "REFRAIN"
+                  ? stanza.type
+                  : stanza.type.split("_")[1]
+              }}
+            </p>
+            <p
+              :class="{
+                italic: stanza.type === 'REFRAIN',
+              }"
+            >
               <span
                 v-for="(line, lineNo) in stanza.text.split('\n')"
                 :key="`stanza-${index}-${lineNo}`"
