@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useShortcuts } from "../../composables/shortcuts";
 import type { HymnData } from "../../types";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
 const route = useRoute<"/hymns/[hymnNo]">();
 const { isOnline } = useNetwork();
+const appStore = useAppStore();
 
 const hymnNumber = computed(() => parseInt(route.params.hymnNo));
 const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
@@ -50,24 +52,26 @@ watch(
   }
 );
 
-const handleKeyDown = (evnt: KeyboardEvent) => {
-  if ( evnt.key === "p") {
-    evnt.preventDefault();
-    router.push(`/slides/${hymnNumber.value}`);
-  } else if (evnt.key === "ArrowLeft" && hymnNumber.value > 1) {
-    router.push(`/hymns/${hymnNumber.value - 1}`);
-  } else if (evnt.key === "ArrowRight" && hymnNumber.value < 695) {
-    router.push(`/hymns/${hymnNumber.value + 1}`);
-  }
-};
+useShortcuts([
+  {
+    shortcut: "p",
+    callback: () => router.push(`/slides/${hymnNumber.value}`),
+    prevent: true,
+  },
+  {
+    shortcut: "arrowleft",
+    callback: () => router.push(`/hymns/${hymnNumber.value - 1}`),
+    enabledWhen: () => !appStore.isSearchModalOpen,
+  },
+  {
+    shortcut: "arrowright",
+    callback: () => router.push(`/hymns/${hymnNumber.value + 1}`),
+    enabledWhen: () => !appStore.isSearchModalOpen,
+  },
+]);
 
 onMounted(() => {
   fetchData();
-  window.addEventListener("keydown", handleKeyDown);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("keydown", handleKeyDown);
 });
 
 const relForPages = computed(() => {

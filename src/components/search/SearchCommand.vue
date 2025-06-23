@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import Fuse from "fuse.js";
+import type { HymnData } from "../../types";
 
 const emit = defineEmits<{ (e: "close"): void }>();
 
 const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
-const { data, fetchData, isLoading } = useData<string>(`${API_URL}hymns/all`);
+const { data, fetchData, isLoading } = useData<HymnData[]>(
+  `${API_URL}hymns/all`
+);
 
 const selectedHymn = ref(-1);
 const query = ref("");
@@ -16,58 +19,19 @@ const searchResults = computed(() => {
   return fuse.value?.search(query.value).map((result) => result.item);
 });
 
-function handleKeyDown(event: KeyboardEvent) {
-  if (event.key === "Escape") {
-    emit("close");
-  }
-
-  if (searchResults.value === undefined) return;
-
-  if (event.key === "ArrowUp") {
-    selectedHymn.value = Math.max(0, selectedHymn.value - 1);
-    scrollToSelected();
-  } else if (event.key === "ArrowDown") {
-    selectedHymn.value = Math.min(
-      searchResults.value.length - 1,
-      selectedHymn.value + 1
-    );
-    scrollToSelected();
-  } else if (event.key === "Enter" && searchResults.value.length) {
-    goToHymn(searchResults.value[selectedHymn.value]["hymn_number"]);
-  }
-}
-
 function goToHymn(hymnNumber: string) {
   router.push(`/hymns/${hymnNumber}`);
   emit("close");
 }
 
-watch(
-  () => data.value,
-  (value) => {
-    if (value === null) return;
-    let actualValue = value;
+watch(data, (value) => {
+  if (!value) return;
 
-    if (typeof value === "string") {
-      actualValue = JSON.stringify(value);
-    }
-
-    fuse.value = new Fuse(JSON.parse(actualValue), {
-      includeScore: true,
-      threshold: 0.3,
-      keys: ["hymn_number", "title", "first_line", "author", "stanzas"],
-    });
-  }
-);
-
-onMounted(() => {
-  fetchData();
-  document.body.style.overflow = "hidden";
-  window.addEventListener("keydown", handleKeyDown);
-});
-
-onUnmounted(() => {
-  document.body.style.overflow = "";
+  fuse.value = new Fuse(value, {
+    includeScore: true,
+    threshold: 0.3,
+    keys: ["hymn_number", "title", "first_line", "author", "stanzas"],
+  });
 });
 
 function scrollToSelected() {
@@ -82,6 +46,47 @@ function scrollToSelected() {
     });
   }
 }
+
+useShortcuts([
+  {
+    shortcut: "escape",
+    callback: () => emit("close"),
+  },
+  {
+    shortcut: "arrowleft",
+    callback: () => {
+      selectedHymn.value = Math.max(0, selectedHymn.value - 1);
+      scrollToSelected();
+    },
+  },
+  {
+    shortcut: "arrowright",
+    callback: () => {
+      selectedHymn.value = Math.min(
+        searchResults.value!.length - 1,
+        selectedHymn.value + 1
+      );
+      scrollToSelected();
+    },
+  },
+  {
+    shortcut: "enter",
+    callback: () => {
+      if (searchResults.value && searchResults.value.length) {
+        goToHymn(searchResults.value[selectedHymn.value]["hymn_number"]);
+      }
+    },
+  },
+]);
+
+onMounted(() => {
+  fetchData();
+  document.body.style.overflow = "hidden";
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "auto";
+});
 </script>
 
 <template>

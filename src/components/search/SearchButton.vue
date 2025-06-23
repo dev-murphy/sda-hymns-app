@@ -1,27 +1,20 @@
 <script lang="ts" setup>
-const isSearchCommandOpen = ref(false);
+const appStore = useAppStore();
 
-const toggleSearchCommand = () => {
-  isSearchCommandOpen.value = !isSearchCommandOpen.value;
-};
-
-const handleKeydown = (evnt: KeyboardEvent) => {
-  if (evnt.key === "/") {
-    evnt.preventDefault();
-    toggleSearchCommand();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("keydown", handleKeydown);
-});
+useShortcuts([
+  {
+    shortcut: "/",
+    callback: appStore.toggleSearchModal,
+    prevent: true,
+  },
+]);
 </script>
 
 <template>
   <div>
     <button
       class="flex items-center gap-x-2 p-2 rounded-md bg-neutral-100 hover:bg-neutral-200"
-      @click="toggleSearchCommand"
+      @click="appStore.toggleSearchModal"
     >
       <Search class="w-5 h-5" />
       <div class="hidden md:flex items-center gap-x-1.5 text-sm">
@@ -36,8 +29,8 @@ onMounted(() => {
 
     <Teleport to="#app">
       <SearchCommand
-        v-if="isSearchCommandOpen"
-        @close="isSearchCommandOpen = false"
+        v-if="appStore.isSearchModalOpen"
+        @close="appStore.modals.search = false"
       />
     </Teleport>
   </div>
