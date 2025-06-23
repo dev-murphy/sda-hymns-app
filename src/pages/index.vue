@@ -87,9 +87,10 @@ onMounted(fetchData);
       <SearchButton class="mr-2" />
       <Breadcrumbs />
       <Pagination
+        v-if="data"
         class="md:ml-auto"
         :current-page="currentPage"
-        :total-pages="Math.floor(data?.count / Number(route.query.limit)) + 1"
+        :total-pages="Math.floor(data.count / Number(route.query.limit)) + 1"
         :current-limit="Number(route.query.limit || 10)"
         @page-changed="pageChanged"
         @limit-changed="limitChanged"
