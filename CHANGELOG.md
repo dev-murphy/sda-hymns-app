@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.9.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.9.0...v1.9.1) (2025-06-23)
+
+
+### Bug Fixes
+
+* handle type error ([4a20145](https://github.com/dev-murphy/sda-hymns-app/commit/4a20145d257a96b3bd164952107542c9c37a2042))
+
+
+### Miscellaneous
+
+* add present shortcut and refactor search modal ([4b7aba2](https://github.com/dev-murphy/sda-hymns-app/commit/4b7aba2ecabae3d6bbafad513061eaccaf1585e2))
+* make dynamic title and description, fix scroll to top, update shortcuts ([cb288d9](https://github.com/dev-murphy/sda-hymns-app/commit/cb288d9b3105dffbc124231502ba08b66ad827f4))
+* repeat refrain after each verse, style refrain differently ([272c4b4](https://github.com/dev-murphy/sda-hymns-app/commit/272c4b4f91fb6c47eb746003330c9422472edb60))
+
+
+### Code Refactors
+
+* remove the offline check ([4379606](https://github.com/dev-murphy/sda-hymns-app/commit/43796061267375657753e9a450453b104fc12ed8))
+
+
+### UI Updates
+
+* reduce the color transition when closing the present mode ([1c31ad8](https://github.com/dev-murphy/sda-hymns-app/commit/1c31ad85f753fe69ae7fda9002e82712a8b5fa35))
+
 ## [1.9.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.8.1...v1.9.0) (2025-01-29)
 
 
