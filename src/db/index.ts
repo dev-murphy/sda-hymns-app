@@ -79,24 +79,25 @@ export async function fetchAllHymns() {
 
 export async function fetchCategories() {
   const hymns = await db.hymns.toArray();
-  return [...new Set(hymns.map((data) => data.category))];
+  return ["", ...new Set(hymns.map((data) => data.category))];
 }
 
 export async function fetchSubcategories(category?: string) {
   const hymns = await db.hymns
     .filter(
       (hymn) =>
-        hymn.category.toLowerCase().replace(" ", "-") === category &&
-        hymn.subcategory !== null
+        hymn.category.toLowerCase().replace(/ /g, "-") === category &&
+        hymn.subcategory !== undefined
     )
     .toArray();
 
-  return [
-    "",
+  const subcategories = [
     ...new Set(
       hymns.filter((hymn) => hymn.subcategory).map((data) => data.subcategory)
     ),
   ];
+
+  return hymns.length > 0 ? ["", ...subcategories] : subcategories;
 }
 
 export default db;
