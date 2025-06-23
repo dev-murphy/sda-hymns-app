@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Component from "unplugin-vue-components/vite";
+import { unheadVueComposablesImports } from "@unhead/vue";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
@@ -12,7 +13,12 @@ export default defineConfig({
   plugins: [
     VueRouter({ extensions: [".vue"], dts: "src/typed-router.d.ts" }),
     AutoImport({
-      imports: ["vue", "@vueuse/core", VueRouterAutoImports],
+      imports: [
+        "vue",
+        "@vueuse/core",
+        VueRouterAutoImports,
+        unheadVueComposablesImports,
+      ],
       dts: "src/auto-imports.d.ts",
       dirs: ["src/stores", "src/composables"],
     }),

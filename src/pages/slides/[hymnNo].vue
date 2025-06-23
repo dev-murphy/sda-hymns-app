@@ -114,6 +114,26 @@ onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyPress);
   window.removeEventListener("click", handleScreenClick);
 });
+
+const hymnNumber = computed(() => parseInt(route.params.hymnNo));
+useHead({
+  title: () =>
+    ` #${hymnNumber.value} [S] - ${data.value?.title} | SDA Hymnal App`,
+  meta: [
+    {
+      name: "description",
+      content: () =>
+        data.value?.first_line ||
+        `${data.value?.title} written by ${data.value?.author}`,
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: () => window.location.href,
+    },
+  ],
+});
 </script>
 
 <template>

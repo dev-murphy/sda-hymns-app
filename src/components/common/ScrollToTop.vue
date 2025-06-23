@@ -4,7 +4,7 @@ const route = useRoute();
 const { isOnline } = useNetwork();
 
 window.addEventListener("scroll", () => {
-  isScrolled.value = window.scrollY > 200;
+  isScrolled.value = window.scrollY > 100;
 });
 
 function scrollToTop() {

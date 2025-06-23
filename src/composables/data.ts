@@ -80,7 +80,7 @@ export function useData<T>(apiUrl: Ref<string> | string) {
   }
 
   return {
-    data: computed(() => data.value),
+    data: computed(() => data.value) as ComputedRef<T | null>,
     isLoading: computed(() => isLoading.value),
     error: computed(() => error.value),
     fetchData,

@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import { createHead } from "@unhead/vue/client";
 
 import App from "./App.vue";
 import router from "./router";
@@ -23,4 +24,4 @@ preloadData(hymns).catch((error) =>
   console.error("Failed to preload data into Dexie: ", error)
 );
 
-createApp(App).use(router).use(createPinia()).mount("#app");
+createApp(App).use(router).use(createHead()).use(createPinia()).mount("#app");

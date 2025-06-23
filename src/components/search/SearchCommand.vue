@@ -52,7 +52,7 @@ watch(
       actualValue = JSON.stringify(value);
     }
 
-    fuse.value = new Fuse(actualValue, {
+    fuse.value = new Fuse(JSON.parse(actualValue), {
       includeScore: true,
       threshold: 0.3,
       keys: ["hymn_number", "title", "first_line", "author", "stanzas"],

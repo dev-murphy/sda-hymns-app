@@ -6,7 +6,7 @@ const toggleSearchCommand = () => {
 };
 
 const handleKeydown = (evnt: KeyboardEvent) => {
-  if (evnt.ctrlKey && evnt.key === "k") {
+  if (evnt.key === "/") {
     evnt.preventDefault();
     toggleSearchCommand();
   }
@@ -26,13 +26,10 @@ onMounted(() => {
       <Search class="w-5 h-5" />
       <div class="hidden md:flex items-center gap-x-1.5 text-sm">
         Search
+
         <span
           class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
-          >Ctrl</span
-        >
-        <span
-          class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
-          >K</span
+          >/</span
         >
       </div>
     </button>
