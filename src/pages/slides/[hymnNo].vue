@@ -72,7 +72,7 @@ const handleKeyPress = (e: KeyboardEvent) => {
   }
 };
 
-const target = ref(null);
+const target = useTemplateRef<HTMLElement>("target");
 const { lengthX } = useSwipe(target, {
   onSwipeEnd() {
     if (!displayStanzas.value.length) return;

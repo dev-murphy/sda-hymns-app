@@ -19,8 +19,9 @@ navigator.serviceWorker
     console.error("Service Worker registration failed:", error)
   );
 
-const hymns = JSON.parse(JSON.stringify(jsonData)) as HymnData[];
-preloadData(hymns).catch((error) =>
+const version = parseInt(jsonData.version);
+const hymns = JSON.parse(JSON.stringify(jsonData.data)) as HymnData[];
+preloadData(version, hymns).catch((error) =>
   console.error("Failed to preload data into Dexie: ", error)
 );
 

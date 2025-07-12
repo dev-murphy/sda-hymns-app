@@ -53,14 +53,15 @@ useShortcuts([
     callback: () => emit("close"),
   },
   {
-    shortcut: "arrowleft",
+    shortcut: "arrowup",
     callback: () => {
       selectedHymn.value = Math.max(0, selectedHymn.value - 1);
       scrollToSelected();
     },
+    prevent: true,
   },
   {
-    shortcut: "arrowright",
+    shortcut: "arrowdown",
     callback: () => {
       selectedHymn.value = Math.min(
         searchResults.value!.length - 1,
@@ -68,6 +69,7 @@ useShortcuts([
       );
       scrollToSelected();
     },
+    prevent: true,
   },
   {
     shortcut: "enter",
@@ -109,12 +111,12 @@ onUnmounted(() => {
         <div v-else-if="searchResults?.length === 0">No hymns found.</div>
         <div v-else class="search-result w-full h-full flex flex-col">
           <button
-            v-for="hymn in searchResults"
+            v-for="(hymn, index) in searchResults"
             :key="hymn.hymn_number"
-            class="text-left"
+            :class="`search-result_${index} text-left`"
             @click="goToHymn(hymn.hymn_number)"
           >
-            <HymnItem :hymn="hymn" />
+            <HymnItem :hymn="hymn" :highlight="index === selectedHymn" />
           </button>
         </div>
       </div>

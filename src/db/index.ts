@@ -1,6 +1,7 @@
 import Dexie, { type Table } from "dexie";
-import type { HymnData } from "../types";
 
+import { updateIndexedDB } from "./version-db";
+import type { HymnData } from "../types";
 class MyDatabase extends Dexie {
   hymns!: Table<HymnData, number>;
 
@@ -15,13 +16,21 @@ class MyDatabase extends Dexie {
 
 const db = new MyDatabase();
 
-export const preloadData = async (data: HymnData[]): Promise<void> => {
+export const preloadData = async (
+  version: number,
+  data: HymnData[]
+): Promise<void> => {
   const existingCount = await db.hymns.count();
   if (existingCount === 0) {
     await db.hymns.bulkAdd(data);
     console.log("JSON data preloaded into Dexie database.");
   } else {
-    console.log("Dexie database already contains data.");
+    const isUpdated = await updateIndexedDB(version, data);
+    if (isUpdated) {
+      console.log("The hymn data was updated to version " + version + "");
+    } else {
+      console.log("Dexie database already contains data.");
+    }
   }
 };
 

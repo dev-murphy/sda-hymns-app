@@ -52,6 +52,19 @@ watch(
   }
 );
 
+const target = useTemplateRef<HTMLElement>("target");
+const { lengthX } = useSwipe(target, {
+  onSwipeEnd() {
+    if (!displayStanzas.value.length) return;
+
+    if (lengthX.value < -50 && hymnNumber.value > 1) {
+      router.push(`/hymns/${hymnNumber.value - 1}`); // Swipe right
+    } else if (lengthX.value > 50 && hymnNumber.value < 695) {
+      router.push(`/hymns/${hymnNumber.value + 1}`); // Swipe left
+    }
+  },
+});
+
 useShortcuts([
   {
     shortcut: "p",
@@ -115,12 +128,12 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col">
+  <div ref="target" class="w-full min-h-screen flex flex-col">
     <Navbar />
 
-    <div class="bg-neutral-200 py-2">
+    <div class="sticky top-0 bg-neutral-200 py-0.5 md:py-2">
       <div
-        class="relative w-full max-w-[1200px] flex items-center justify-between mx-auto px-2 md:px-5 py-2.5"
+        class="relative w-full max-w-[1200px] flex items-center mx-auto px-2 md:px-5 py-2.5"
       >
         <!-- Go to previous hymn -->
         <RouterLink
@@ -136,9 +149,11 @@ useHead({
 
         <!-- Hymn Heading -->
         <p
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center font-bold"
+          class="w-max max-w-[70%] mx-auto text-lg sm:text-xl md:text-2xl text-center font-bold"
         >
-          <span class="block -mb-1.5 text-lg font-medium font-arima">
+          <span
+            class="block -mb-1.5 text-sm sm:text-base font-medium font-arima"
+          >
             Hymn #{{ hymnNumber }}
           </span>
           {{ data?.title }}
@@ -158,12 +173,13 @@ useHead({
 
     <!-- Verses and Choruses -->
     <div class="flex-grow">
-      <div v-if="displayStanzas" class="py-7">
+      <div v-if="displayStanzas" class="py-4 md:py-7">
         <ul
           v-for="(stanza, index) in displayStanzas"
           :key="`${stanza.type}-${index}`"
+          class="px-5 text-base md:text-xl"
         >
-          <li class="text-center text-xl py-3">
+          <li class="text-center py-3">
             <p
               class="mb-2 font-semibold font-arima"
               :class="{
@@ -177,7 +193,6 @@ useHead({
               }}
             </p>
             <p
-              class="text-xl"
               :class="{
                 italic: stanza.type === 'REFRAIN',
               }"

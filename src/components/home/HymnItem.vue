@@ -1,12 +1,16 @@
 <script lang="ts" setup>
 import type { HymnData } from "../../types";
 
-defineProps<{ hymn: Partial<HymnData> }>();
+const { highlight = false } = defineProps<{
+  hymn: Partial<HymnData>;
+  highlight?: boolean;
+}>();
 </script>
 
 <template>
   <div
-    class="flex flex-col md:flex-row items-start gap-x-3 px-3 py-2 hover:bg-neutral-200 cursor-pointer"
+    class="flex flex-col md:flex-row items-start gap-x-3 px-3 py-2 cursor-pointer"
+    :class="[highlight ? 'bg-neutral-200' : 'hover:bg-neutral-200 ']"
   >
     <h2
       class="w-full md:w-fit pt-1 text-lg md:text-3xl font-arima font-black truncate"

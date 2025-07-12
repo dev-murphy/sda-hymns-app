@@ -25,11 +25,13 @@ const route = useRoute() as RouteLocationNormalizedLoaded & {
         class="flex items-center gap-x-2 bg-neutral-100 hover:bg-neutral-200 p-2 ml-auto mr-3 text-sm rounded-md cursor-pointer"
       >
         <Present class="w-5 h-5" />
-        <p class="hidden md:inline">Present</p>
-        <span
-          class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
-          >P</span
-        >
+        <p class="hidden md:inline">
+          Present
+          <span
+            class="border-2 border-b-4 border-neutral-400 p-px px-1.5 text-[12px] font-mono rounded-md"
+            >P</span
+          >
+        </p>
       </RouterLink>
       <SearchButton />
     </nav>
