@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.10.0](https://github.com/dev-murphy/sda-hymns-app/compare/v1.9.1...v1.10.0) (2025-07-12)
+
+
+### Features
+
+* fix shortcuts, add minor update to UI and add version to hymn data ([c24fa90](https://github.com/dev-murphy/sda-hymns-app/commit/c24fa906751463090e53421ce8599315d7d8f2d2))
+
+
+### Bug Fixes
+
+* ensure the correct categories and subcategories from db ([b4bac30](https://github.com/dev-murphy/sda-hymns-app/commit/b4bac3020e0cf3a7c6e4144df624a08877a10eb2))
+
+
+### Miscellaneous
+
+* update browserlist ([6f594a9](https://github.com/dev-murphy/sda-hymns-app/commit/6f594a96f3edc984651481f7dac006d5ab656724))
+
+
+### Code Refactors
+
+* create a shortcut composable ([80c8cce](https://github.com/dev-murphy/sda-hymns-app/commit/80c8cce8e3afd2130ed4518334fecfeca7a4b604))
+
 ## [1.9.1](https://github.com/dev-murphy/sda-hymns-app/compare/v1.9.0...v1.9.1) (2025-06-23)
 
 
