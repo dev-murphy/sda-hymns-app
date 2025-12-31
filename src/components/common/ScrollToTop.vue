@@ -24,7 +24,7 @@ function scrollToTop() {
       ]"
       @click="scrollToTop"
     >
-      <Chevron class="relative w-7 h-7 bottom-[1px] rotate-180 text-white" />
+      <Chevron class="relative w-7 h-7 bottom-px rotate-180 text-white" />
     </button>
   </Transition>
 </template>

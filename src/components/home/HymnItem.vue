@@ -34,7 +34,7 @@ const { highlight = false } = defineProps<{
 
     <p
       v-if="hymn.key"
-      class="hidden md:inline-block flex-shrink-0 bg-black ml-auto px-2 text-white text-sm font-medium rounded-full"
+      class="hidden md:inline-block shrink-0 bg-black ml-auto px-2 text-white text-sm font-medium rounded-full"
     >
       {{ hymn.key }}
     </p>

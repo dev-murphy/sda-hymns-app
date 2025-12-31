@@ -174,7 +174,7 @@ useHead({
     </div>
 
     <!-- Verses and Choruses -->
-    <div class="flex-grow">
+    <div class="grow">
       <div v-if="displayStanzas" class="py-4 md:py-7">
         <ul
           v-for="(stanza, index) in displayStanzas"

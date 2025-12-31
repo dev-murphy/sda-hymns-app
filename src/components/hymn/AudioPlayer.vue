@@ -82,7 +82,7 @@ onUnmounted(() => {
   <div class="flex items-center px-4">
     <audio ref="audio" />
 
-    <div class="flex flex-shrink-0 gap-x-px rounded-lg overflow-hidden mr-">
+    <div class="flex shrink-0 gap-x-px rounded-lg overflow-hidden mr-">
       <button
         @click="playing = !playing"
         class="bg-neutral-300 hover:bg-neutral-400 p-2"
@@ -106,11 +106,11 @@ onUnmounted(() => {
       <span class="text-sm mr-2">{{ formatTime(currentTime) }}</span>
 
       <div
-        class="flex-1 h-1.5 bg-neutral-400 rounded cursor-pointer"
+        class="flex-1 h-1.5 bg-neutral-400 rounded-sm cursor-pointer"
         @click="onProgressBarClick"
       >
         <div
-          class="relative h-full bg-neutral-600 rounded"
+          class="relative h-full bg-neutral-600 rounded-sm"
           :style="{ width: `${(currentTime / duration) * 100}%` }"
         >
           <div

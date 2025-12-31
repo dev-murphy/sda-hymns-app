@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Component from "unplugin-vue-components/vite";
 import { unheadVueComposablesImports } from "@unhead/vue";
+import Tailwindcss from "@tailwindcss/vite";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
@@ -27,6 +28,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/],
       dts: "src/components.d.ts",
     }),
+    Tailwindcss(),
     Vue(),
     WebfontDownload(),
     VitePWA({

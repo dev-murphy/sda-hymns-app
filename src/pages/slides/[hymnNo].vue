@@ -175,7 +175,7 @@ useHead({
         {{ displayStanzas[currentVerse]?.type.replace("_", " ") }}
       </p>
 
-      <div class="flex flex-grow items-center">
+      <div class="flex grow items-center">
         <p
           v-if="data"
           :class="[

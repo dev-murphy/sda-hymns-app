@@ -90,7 +90,7 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="fixed inset-0 bg-black/40 flex items-center justify-center backdrop-blur-sm"
+    class="fixed inset-0 bg-black/40 flex items-center justify-center backdrop-blur-xs"
     @click="$emit('close')"
   >
     <div
@@ -100,7 +100,7 @@ onUnmounted(() => {
       <SearchInput v-model="query" placeholder="Search hymns..." />
 
       <div
-        class="flex flex-grow items-center justify-center py-2 overflow-y-auto"
+        class="flex grow items-center justify-center py-2 overflow-y-auto"
       >
         <div v-if="isLoading" class="text-center p-4 text-gray-500">
           Loading hymns...
@@ -119,7 +119,7 @@ onUnmounted(() => {
       </div>
 
       <div
-        class="hidden md:flex flex-shrink-0 items-center gap-x-3 w-full h-12 border-t border-neutral-200 px-3"
+        class="hidden md:flex shrink-0 items-center gap-x-3 w-full h-12 border-t border-neutral-200 px-3"
       >
         <div class="flex items-center gap-x-2">
           <EnterKey class="w-6 h-6" />

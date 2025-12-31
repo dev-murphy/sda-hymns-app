@@ -4,7 +4,7 @@
     <input
       :id="id"
       ref="inputRef"
-      class="w-full border-b border-neutral-300 p-3 pl-10 outline-none"
+      class="w-full border-b border-neutral-300 p-3 pl-10 outline-hidden"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
