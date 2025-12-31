@@ -11,7 +11,8 @@
   "dependencies": {
     "@unhead/vue": "^2.0.10",
     "@vueuse/core": "^12.3.0",
-    "caniuse-lite": "^1.0.30001724",
+    "baseline-browser-mapping": "^2.9.11",
+    "caniuse-lite": "^1.0.30001762",
     "dexie": "^4.0.11",
     "fuse.js": "^7.0.0",
     "pinia": "^2.3.0",
