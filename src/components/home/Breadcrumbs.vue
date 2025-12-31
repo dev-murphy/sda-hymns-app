@@ -3,7 +3,6 @@
 
 const router = useRouter();
 const route = useRoute();
-const API_URL = import.meta.env.VITE_API_URL;
 
 function formatText(input: string): string {
   return input.toLowerCase().replace(/\s+/g, "-");
@@ -12,9 +11,9 @@ function formatText(input: string): string {
 const category = ref("");
 const subcategory = ref("");
 const subcateogryUrl = ref(
-  `${API_URL}subcategories${
+  `subcategories${
     category.value ? `?category=${formatText(category.value)}` : ""
-  }`
+  }`,
 );
 
 if (route.query.categories !== undefined) {
@@ -26,9 +25,8 @@ if (route.query.categories !== undefined) {
   }
 }
 
-const { data: categories, fetchData: fetchCategories } = useData<string[]>(
-  `${API_URL}categories`
-);
+const { data: categories, fetchData: fetchCategories } =
+  useData<string[]>(`categories`);
 const { data: subcategories, fetchData: fetchSubcategories } =
   useData<string[]>(subcateogryUrl);
 
@@ -43,10 +41,10 @@ watch(
         categories: value === "" ? undefined : value,
       },
     });
-    subcateogryUrl.value = `${API_URL}subcategories${
+    subcateogryUrl.value = `subcategories${
       category.value ? `?category=${formatText(value)}` : ""
     }`;
-  }
+  },
 );
 
 watch(
@@ -67,7 +65,7 @@ watch(
     router.push({
       query: { ...route.query, offset: 0, categories: newCategories },
     });
-  }
+  },
 );
 
 onMounted(() => {
@@ -85,7 +83,11 @@ onMounted(() => {
       :options="categories || []"
       type="flat"
       default-text="Categories"
-      @input="(value: string | number) => { category = value as string;}"
+      @input="
+        (value: string | number) => {
+          category = value as string;
+        }
+      "
     />
     <div v-if="subcategories?.length !== 0" class="flex items-center">
       <Chevron class="w-5 h-5 -rotate-90" />
@@ -94,7 +96,11 @@ onMounted(() => {
         :options="subcategories || []"
         type="flat"
         default-text="Subcategories"
-        @input="(value: string | number) => { subcategory = value as string;}"
+        @input="
+          (value: string | number) => {
+            subcategory = value as string;
+          }
+        "
       />
     </div>
   </div>

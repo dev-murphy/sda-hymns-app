@@ -2,14 +2,13 @@
 import { useShortcuts } from "../../composables/shortcuts";
 import type { HymnData } from "../../types";
 
-const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
 const route = useRoute<"/hymns/[hymnNo]">();
 const { isOnline } = useNetwork();
 const appStore = useAppStore();
 
 const hymnNumber = computed(() => parseInt(route.params.hymnNo));
-const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
+const hymnUrl = ref(`hymns/${route.params.hymnNo}`);
 const { data, fetchData } = useData<HymnData>(hymnUrl);
 
 const stanzas = computed<{ text: string; type: string }[]>(() => {
@@ -19,7 +18,7 @@ const stanzas = computed<{ text: string; type: string }[]>(() => {
 });
 
 const hasRefrain = computed(() =>
-  stanzas.value.some((stanza) => stanza.type.toLowerCase() === "refrain")
+  stanzas.value.some((stanza) => stanza.type.toLowerCase() === "refrain"),
 );
 
 // Parse stanzas and handle refrain repetition
@@ -27,15 +26,18 @@ const displayStanzas = computed(() => {
   if (!hasRefrain.value) return stanzas.value;
 
   const verses = stanzas.value.filter(
-    (s) => s.type.toLowerCase() !== "refrain"
+    (s) => s.type.toLowerCase() !== "refrain",
   );
   const refrain = stanzas.value.find((s) => s.type.toLowerCase() === "refrain");
 
-  const updatedStanzas = verses.reduce((acc, verse) => {
-    acc.push(verse);
-    if (refrain) acc.push(refrain);
-    return acc;
-  }, [] as typeof stanzas.value);
+  const updatedStanzas = verses.reduce(
+    (acc, verse) => {
+      acc.push(verse);
+      if (refrain) acc.push(refrain);
+      return acc;
+    },
+    [] as typeof stanzas.value,
+  );
 
   if (hymnNumber.value === 93) {
     return refrain ? [refrain, ...updatedStanzas] : updatedStanzas;
@@ -48,8 +50,8 @@ watch(
   () => hymnNumber.value,
   (value) => {
     fetchData();
-    hymnUrl.value = `${API_URL}hymns/${value}`;
-  }
+    hymnUrl.value = `hymns/${value}`;
+  },
 );
 
 const target = useTemplateRef<HTMLElement>("target");
@@ -217,7 +219,7 @@ useHead({
     >
       <AudioPlayer
         :audio-url="`https://github.com/dev-murphy/hymn-resources/raw/refs/heads/main/mp3/${encodeURI(
-          data.filename
+          data.filename,
         )}`"
       />
     </div>

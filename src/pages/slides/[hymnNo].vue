@@ -2,13 +2,12 @@
 import { useMobile } from "../../composables/mobile";
 import type { HymnData } from "../../types";
 
-const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
 const route = useRoute<"/slides/[hymnNo]">();
 const { height } = useWindowSize();
 const { isMobile } = useMobile();
 
-const hymnUrl = ref(`${API_URL}hymns/${route.params.hymnNo}`);
+const hymnUrl = ref(`hymns/${route.params.hymnNo}`);
 
 const { data, fetchData } = useData<HymnData>(hymnUrl);
 const stanzas = computed<{ text: string; type: string }[]>(() => {
@@ -19,22 +18,25 @@ const stanzas = computed<{ text: string; type: string }[]>(() => {
 
 const currentVerse = ref(0);
 const hasRefrain = computed(() =>
-  stanzas.value.some((stanza) => stanza.type.toLowerCase() === "refrain")
+  stanzas.value.some((stanza) => stanza.type.toLowerCase() === "refrain"),
 );
 
 const displayStanzas = computed(() => {
   if (!hasRefrain.value) return stanzas.value;
 
   const verses = stanzas.value.filter(
-    (s) => s.type.toLowerCase() !== "refrain"
+    (s) => s.type.toLowerCase() !== "refrain",
   );
   const refrain = stanzas.value.find((s) => s.type.toLowerCase() === "refrain");
 
-  const updatedStanzas = verses.reduce((acc, verse) => {
-    acc.push(verse);
-    if (refrain) acc.push(refrain);
-    return acc;
-  }, [] as typeof stanzas.value);
+  const updatedStanzas = verses.reduce(
+    (acc, verse) => {
+      acc.push(verse);
+      if (refrain) acc.push(refrain);
+      return acc;
+    },
+    [] as typeof stanzas.value,
+  );
 
   return route.params.hymnNo === "93"
     ? [refrain, ...updatedStanzas]
@@ -187,7 +189,7 @@ useHead({
         >
           <span
             v-for="(line, index) in displayStanzas[currentVerse]?.text.split(
-              '\n'
+              '\n',
             )"
             :key="`stanza-${currentVerse}-line-${index}`"
             class="block"

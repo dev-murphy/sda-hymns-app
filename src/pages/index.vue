@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { HymnData } from "../types";
 import { getCurrentPage, getStringifyQuery, setOffset } from "../utils";
-const API_URL = import.meta.env.VITE_API_URL;
 
 const currentPage = ref(1);
 const route = useRoute();
@@ -36,24 +35,24 @@ if (route.query.offset === undefined && route.query.limit === undefined) {
   router.push({ query: { ...route.query, limit: 10 } });
 }
 
-const url = ref(`${API_URL}hymns?${getStringifyQuery(route.query)}`);
+const url = ref(`hymns?${getStringifyQuery(route.query)}`);
 const { data, fetchData } = useData<{ count: number; hymns: HymnData[] }>(url);
 
 watch(
   () => route.query,
   (value) => {
-    url.value = `${API_URL}hymns?${getStringifyQuery(value)}`;
+    url.value = `hymns?${getStringifyQuery(value)}`;
   },
   {
     deep: true,
-  }
+  },
 );
 
 watch(
   () => route.query.offset,
   (value) => {
     if (Number(value) === 0) currentPage.value = 1;
-  }
+  },
 );
 
 onMounted(fetchData);

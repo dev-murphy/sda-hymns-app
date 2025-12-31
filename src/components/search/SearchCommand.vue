@@ -4,11 +4,8 @@ import type { HymnData } from "../../types";
 
 const emit = defineEmits<{ (e: "close"): void }>();
 
-const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
-const { data, fetchData, isLoading } = useData<HymnData[]>(
-  `${API_URL}hymns/all`
-);
+const { data, fetchData, isLoading } = useData<HymnData[]>(`hymns/all`);
 
 const selectedHymn = ref(-1);
 const query = ref("");
@@ -36,7 +33,7 @@ watch(data, (value) => {
 
 function scrollToSelected() {
   const selectedElement = document.querySelector(
-    `.search-result_${selectedHymn.value + 1}`
+    `.search-result_${selectedHymn.value + 1}`,
   );
 
   if (selectedElement) {
@@ -65,7 +62,7 @@ useShortcuts([
     callback: () => {
       selectedHymn.value = Math.min(
         searchResults.value!.length - 1,
-        selectedHymn.value + 1
+        selectedHymn.value + 1,
       );
       scrollToSelected();
     },
